@@ -1,0 +1,406 @@
+-- Services
+local Players          = game:GetService("Players")
+local RunService       = game:GetService("RunService")
+local TweenService     = game:GetService("TweenService")
+local UserInputService = game:GetService("UserInputService")
+local SoundService     = game:GetService("SoundService")
+
+-- Wait for player and PlayerGui
+local LocalPlayer = Players.LocalPlayer
+while not LocalPlayer do task.wait(0.05); LocalPlayer = Players.LocalPlayer end
+local PlayerGui = LocalPlayer:WaitForChild("PlayerGui")
+local Camera = workspace.CurrentCamera
+
+-- Safe constructors
+local function safeNew(class)
+    local ok, inst = pcall(function() return Instance.new(class) end)
+    if ok then return inst end
+    return nil
+end
+local function newSound(id)
+    local ok, s = pcall(function()
+        local snd = Instance.new("Sound")
+        snd.SoundId = id
+        snd.Volume = 1
+        snd.Parent = SoundService
+        return snd
+    end)
+    return ok and s or nil
+end
+
+-- CONFIG
+local CFG = {
+    AIM_RADIUS = 500,
+    LOCK_PART = "Head",
+    AIM_MODE = "Smooth",
+    SMOOTHING = 0.35,
+    USE_CAM_HEIGHT = true,
+    CAM_HEIGHT = 2,
+    SCREEN_TILT = -5,
+    SWITCH_SENSITIVITY_YAW = 0.006,
+    SWITCH_SENSITIVITY_PITCH = 0.02,
+    SWITCH_COOLDOWN = 0.08,
+    TARGET_PRIORITY = "Angle",
+    USE_FRIEND_FILTER = true,
+    SHOW_FOV = true,
+    FOV_PIXELS = 120,
+    FOV_THICKNESS = 3,
+    FOV_COLOR = Color3.fromRGB(255,255,255),
+    TOGGLE_SOUND_ID = "rbxassetid://1524549907",
+    USE_PREDICTION = false,
+    BULLET_SPEED = 1400,
+    PREDICT_MULT = 1.0,
+
+    -- ESP defaults
+    ESP_ENABLED = false,
+    ESP_ALWAYS_ON_TOP = true,
+    ESP_SHOW_NAME = true,
+    ESP_FILL = Color3.fromRGB(255, 0, 0),
+    ESP_OUTLINE = Color3.fromRGB(0,0,0),
+}
+
+-- STATE
+local aiming = false
+local targetPart = nil
+local targetHRP = nil
+local lastYaw, lastPitch = nil, nil
+local lastSwitchTick = 0
+
+local toggleSound = newSound(CFG.TOGGLE_SOUND_ID)
+
+-- GUI BUILD
+local gui = safeNew("ScreenGui")
+if not gui then return end
+gui.Name = "DeltaAim_UI"
+gui.ResetOnSpawn = false
+gui.IgnoreGuiInset = true
+gui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+pcall(function() gui.Parent = PlayerGui end)
+
+-- Watermark (top left, pixelated font)
+local watermark = Instance.new("TextLabel")
+watermark.Name = "Watermark"
+watermark.Parent = gui
+watermark.AnchorPoint = Vector2.new(0, 0)
+watermark.Position = UDim2.new(0, 6, 0, 6)
+watermark.Size = UDim2.new(0, 180, 0, 20)
+watermark.BackgroundTransparency = 1
+watermark.Text = "Made By Merebennie"
+watermark.Font = Enum.Font.Arcade -- pixelated
+watermark.TextSize = 14
+watermark.TextColor3 = Color3.new(1, 1, 1)
+watermark.TextStrokeColor3 = Color3.new(0, 0, 0)
+watermark.TextStrokeTransparency = 0.2
+watermark.ZIndex = 100
+
+-- Main frame
+local mainFrame = safeNew("Frame"); mainFrame.Parent = gui
+mainFrame.Name = "MainFrame"
+mainFrame.Size = UDim2.new(0,260,0,100)
+mainFrame.Position = UDim2.new(0.5,-130,0.12,0)
+mainFrame.AnchorPoint = Vector2.new(0.5,0)
+mainFrame.Active = true; mainFrame.Draggable = true
+mainFrame.BackgroundColor3 = Color3.fromRGB(30,30,30)
+Instance.new("UICorner", mainFrame).CornerRadius = UDim.new(0,12)
+Instance.new("UIStroke", mainFrame).Color = Color3.fromRGB(75,75,75)
+
+local title = safeNew("TextLabel"); title.Parent = mainFrame
+title.Size = UDim2.new(1,-40,0,28); title.Position = UDim2.new(0,8,0,0)
+title.BackgroundTransparency = 1; title.Font = Enum.Font.GothamBold; title.TextSize = 18
+title.TextColor3 = Color3.new(1,1,1); title.Text = "Aimlock Controller"; title.TextXAlignment = Enum.TextXAlignment.Left
+
+-- Settings button
+local settingsBtn = safeNew("TextButton"); settingsBtn.Parent = mainFrame
+settingsBtn.Size = UDim2.new(0,28,0,28); settingsBtn.Position = UDim2.new(1,-8,0,4); settingsBtn.AnchorPoint = Vector2.new(1,0)
+settingsBtn.Text = "⚙"; settingsBtn.Font = Enum.Font.GothamBold; settingsBtn.TextSize = 18
+settingsBtn.TextColor3 = Color3.new(1,1,1)
+settingsBtn.BackgroundColor3 = Color3.fromRGB(45,45,45)
+Instance.new("UICorner", settingsBtn).CornerRadius = UDim.new(1,0)
+Instance.new("UIStroke", settingsBtn).Color = Color3.fromRGB(70,70,70)
+
+-- Toggle button
+local toggleBtn = safeNew("TextButton"); toggleBtn.Parent = mainFrame
+toggleBtn.Size = UDim2.new(0.7,0,0,36); toggleBtn.Position = UDim2.new(0.05,0,0.52,0)
+toggleBtn.Font = Enum.Font.GothamBold; toggleBtn.TextSize = 16
+toggleBtn.Text = "AIMBOT: OFF"; toggleBtn.BackgroundColor3 = Color3.fromRGB(50,50,50)
+toggleBtn.TextColor3 = Color3.new(1,1,1)
+Instance.new("UICorner", toggleBtn).CornerRadius = UDim.new(0,8)
+
+local statusDot = safeNew("Frame"); statusDot.Parent = mainFrame
+statusDot.Size = UDim2.new(0,18,0,18); statusDot.Position = UDim2.new(0.8,0,0.55,0)
+statusDot.BackgroundColor3 = Color3.fromRGB(150,0,0); Instance.new("UICorner", statusDot).CornerRadius = UDim.new(1,0)
+
+-- Quick circle button
+local quickBtn = safeNew("TextButton"); quickBtn.Parent = gui
+quickBtn.AnchorPoint = Vector2.new(0,1); quickBtn.Position = UDim2.new(0,12,1,-80)
+quickBtn.Size = UDim2.new(0,52,0,52); quickBtn.Text = "OFF"; quickBtn.Font = Enum.Font.GothamBold; quickBtn.TextSize = 16
+quickBtn.TextColor3 = Color3.new(1,1,1); quickBtn.BackgroundColor3 = Color3.fromRGB(40,40,40)
+quickBtn.Active = true; quickBtn.Draggable = true; quickBtn.ZIndex = 50
+Instance.new("UICorner", quickBtn).CornerRadius = UDim.new(1,0)
+Instance.new("UIStroke", quickBtn).Color = Color3.fromRGB(80,80,80)
+
+-- UI update function
+local function updateUI()
+    local stateText = aiming and "AIMBOT: ON" or "AIMBOT: OFF"
+    toggleBtn.Text = stateText
+    quickBtn.Text = aiming and "ON" or "OFF"
+
+    local colorGoal = aiming and Color3.fromRGB(0,200,0) or Color3.fromRGB(150,0,0)
+    TweenService:Create(statusDot, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+        BackgroundColor3 = colorGoal,
+        Size = aiming and UDim2.new(0,20,0,20) or UDim2.new(0,16,0,16)
+    }):Play()
+
+    local sizeGoal = aiming and UDim2.new(0,56,0,56) or UDim2.new(0,52,0,52)
+    TweenService:Create(quickBtn, TweenInfo.new(0.15, Enum.EasingStyle.Back, Enum.EasingDirection.Out), {
+        Size = sizeGoal
+    }):Play()
+end
+
+toggleBtn.MouseButton1Click:Connect(function()
+    aiming = not aiming; targetPart = nil; targetHRP = nil
+    pcall(function() if toggleSound then toggleSound:Play() end end)
+    updateUI()
+end)
+quickBtn.MouseButton1Click:Connect(function()
+    aiming = not aiming; targetPart = nil; targetHRP = nil
+    pcall(function() if toggleSound then toggleSound:Play() end end)
+    updateUI()
+end)
+-- Settings panel (movable)
+local settingsFrame = safeNew("Frame"); settingsFrame.Parent = gui
+settingsFrame.Size = UDim2.new(0,0,0,0); settingsFrame.Position = UDim2.new(0.5,-140,0.12,108)
+settingsFrame.AnchorPoint = Vector2.new(0.5,0); settingsFrame.BackgroundColor3 = Color3.fromRGB(30,30,30)
+settingsFrame.Visible = false; settingsFrame.Active = true; settingsFrame.Draggable = true
+Instance.new("UICorner", settingsFrame).CornerRadius = UDim.new(0,12)
+Instance.new("UIStroke", settingsFrame).Color = Color3.fromRGB(80,80,80)
+local padding = Instance.new("UIPadding", settingsFrame); padding.PaddingTop = UDim.new(0,8); padding.PaddingLeft = UDim.new(0,8); padding.PaddingRight = UDim.new(0,8)
+local layout = Instance.new("UIListLayout", settingsFrame); layout.Padding = UDim.new(0,8); layout.SortOrder = Enum.SortOrder.LayoutOrder; layout.VerticalAlignment = Enum.VerticalAlignment.Top
+
+-- Button row template
+local function rowButton(text)
+    local b = safeNew("TextButton")
+    b.Size = UDim2.new(1,0,0,30)
+    b.Font = Enum.Font.Gotham; b.TextSize = 14
+    b.Text = text; b.TextColor3 = Color3.new(1,1,1)
+    b.BackgroundColor3 = Color3.fromRGB(45,45,45)
+    Instance.new("UICorner", b).CornerRadius = UDim.new(0,6)
+    Instance.new("UIStroke", b).Color = Color3.fromRGB(70,70,70)
+    return b
+end
+
+-- Slider row
+local function rowSlider(label, min, max, step, default, callback)
+    local frameRow = safeNew("Frame"); frameRow.Parent = settingsFrame; frameRow.Size = UDim2.new(1,0,0,28); frameRow.BackgroundTransparency = 1
+    local lbl = safeNew("TextLabel"); lbl.Parent = frameRow; lbl.Size = UDim2.new(0.62,0,1,0)
+    lbl.BackgroundTransparency = 1; lbl.Font = Enum.Font.Gotham; lbl.TextSize = 14; lbl.TextXAlignment = Enum.TextXAlignment.Left; lbl.TextColor3 = Color3.new(1,1,1)
+
+    local minus = rowButton("-"); minus.Parent = frameRow; minus.Size = UDim2.new(0,26,1,0); minus.Position = UDim2.new(0.66,4,0,0)
+    local plus = rowButton("+"); plus.Parent = frameRow; plus.Size = UDim2.new(0,26,1,0); plus.Position = UDim2.new(0.86,4,0,0)
+
+    local value = default
+    local function upd(v)
+        value = math.clamp(v, min, max)
+        lbl.Text = label .. ": " .. string.format("%.1f", value)
+        pcall(callback, value)
+    end
+    minus.MouseButton1Click:Connect(function() upd(value - step) end)
+    plus.MouseButton1Click:Connect(function() upd(value + step) end)
+    upd(default)
+    return frameRow, lbl
+end
+
+-- Toggle row
+local function rowToggle(label, default, callback)
+    local v = default
+    local btn = rowButton(label .. ": " .. (v and "ON" or "OFF"))
+    btn.MouseButton1Click:Connect(function()
+        v = not v
+        btn.Text = label .. ": " .. (v and "ON" or "OFF")
+        pcall(callback, v)
+    end)
+    btn.Parent = settingsFrame
+    return btn
+end
+
+-- Dropdown row
+local function rowDropdown(label, opts, defaultValue, callback)
+    local idx = 1
+    for i,o in ipairs(opts) do if o.value == defaultValue then idx = i break end end
+    local b = rowButton(label .. ": " .. opts[idx].label)
+    b.MouseButton1Click:Connect(function()
+        idx = idx % #opts + 1
+        b.Text = label .. ": " .. opts[idx].label
+        pcall(callback, opts[idx].value)
+    end)
+    b.Parent = settingsFrame
+    return b
+end
+
+-- Settings rows
+rowSlider("Aim Smoothness", 0, 1, 0.05, CFG.SMOOTHING, function(v) CFG.SMOOTHING = v end)
+rowDropdown("Aim Mode", { {label="Smooth", value="Smooth"}, {label="Snap", value="Snap"} }, CFG.AIM_MODE, function(v) CFG.AIM_MODE = v end)
+rowToggle("Use Prediction", CFG.USE_PREDICTION, function(v) CFG.USE_PREDICTION = v end)
+rowSlider("Bullet Speed (Prediction)", 200, 5000, 50, CFG.BULLET_SPEED, function(v) CFG.BULLET_SPEED = v end)
+rowSlider("Prediction Multiplier", 0, 3, 0.05, CFG.PREDICT_MULT, function(v) CFG.PREDICT_MULT = v end)
+rowDropdown("Target Priority", { {label="Angle", value="Angle"}, {label="Screen", value="Screen"}, {label="Distance", value="Distance"} }, CFG.TARGET_PRIORITY, function(v) CFG.TARGET_PRIORITY = v end)
+rowDropdown("Switch Mode", { {label="By Look", value="ByLook"}, {label="Closest", value="Closest"} }, "ByLook", function(v) if v then CFG.SWITCH_MODE = v end end)
+rowSlider("Screen Tilt (degrees)", -15, 15, 1, CFG.SCREEN_TILT, function(v) CFG.SCREEN_TILT = v end)
+rowSlider("Switch Sensitivity (Yaw)", 0.001, 0.02, 0.001, CFG.SWITCH_SENSITIVITY_YAW, function(v) CFG.SWITCH_SENSITIVITY_YAW = v end)
+rowSlider("Switch Sensitivity (Pitch)", 0.005, 0.12, 0.005, CFG.SWITCH_SENSITIVITY_PITCH, function(v) CFG.SWITCH_SENSITIVITY_PITCH = v end)
+rowSlider("Switch Cooldown (s)", 0.02, 0.5, 0.01, CFG.SWITCH_COOLDOWN, function(v) CFG.SWITCH_COOLDOWN = math.max(0.02, v) end)
+rowSlider("FOV Size (px)", 20, 400, 5, CFG.FOV_PIXELS, function(v) CFG.FOV_PIXELS = v; if fovFrame then fovFrame.Size = UDim2.new(0, v*2, 0, v*2) end end)
+rowToggle("Show FOV Circle", CFG.SHOW_FOV, function(v) CFG.SHOW_FOV = v; if fovFrame then fovFrame.Visible = v end end)
+rowToggle("Friend Filter", CFG.USE_FRIEND_FILTER, function(v) CFG.USE_FRIEND_FILTER = v end)
+rowToggle("Enable ESP", CFG.ESP_ENABLED, function(v) CFG.ESP_ENABLED = v end)
+rowToggle("ESP Always On Top", CFG.ESP_ALWAYS_ON_TOP, function(v) CFG.ESP_ALWAYS_ON_TOP = v end)
+rowToggle("Show Name", CFG.ESP_SHOW_NAME, function(v) CFG.ESP_SHOW_NAME = v end)
+
+-- Settings open/close
+settingsBtn.MouseButton1Click:Connect(function()
+    pcall(function() if toggleSound then toggleSound:Play() end end)
+    if settingsFrame.Visible then
+        TweenService:Create(settingsFrame, TweenInfo.new(0.18, Enum.EasingStyle.Quad, Enum.EasingDirection.In), {Size = UDim2.new(0,0,0,0)}):Play()
+        task.delay(0.18, function() settingsFrame.Visible = false end)
+    else
+        settingsFrame.Visible = true
+        local h = layout.AbsoluteContentSize.Y + 16
+        TweenService:Create(settingsFrame, TweenInfo.new(0.22, Enum.EasingStyle.Back, Enum.EasingDirection.Out), {Size = UDim2.new(0,300,0,h)}):Play()
+    end
+end)
+-- ESP handling
+local espFolder = Instance.new("Folder", gui); espFolder.Name = "ESPFolder"
+local espTable = {}
+
+local function removeESPForPlayer(plr)
+    if espTable[plr] then
+        espTable[plr]:Destroy()
+        espTable[plr] = nil
+    end
+end
+
+local function createESPForPlayer(plr)
+    if not CFG.ESP_ENABLED then return end
+    if espTable[plr] then return end
+    if not plr.Character then return end
+
+    local box = Drawing.new("Square")
+    box.Color = CFG.ESP_FILL
+    box.Thickness = 1
+    box.Filled = false
+
+    local nameTag = Drawing.new("Text")
+    nameTag.Color = Color3.fromRGB(255,255,255)
+    nameTag.Size = 16
+    nameTag.Center = true
+    nameTag.Visible = CFG.ESP_SHOW_NAME
+
+    espTable[plr] = {box = box, tag = nameTag}
+end
+
+-- Update ESP each frame
+RunService.RenderStepped:Connect(function()
+    if not CFG.ESP_ENABLED then
+        for _,v in pairs(espTable) do
+            v.box.Visible = false
+            v.tag.Visible = false
+        end
+        return
+    end
+
+    for _,plr in ipairs(Players:GetPlayers()) do
+        if plr ~= LocalPlayer and plr.Character and plr.Character:FindFirstChild("HumanoidRootPart") then
+            createESPForPlayer(plr)
+
+            local hrp = plr.Character.HumanoidRootPart
+            local pos, onscreen = Camera:WorldToViewportPoint(hrp.Position)
+            if espTable[plr] then
+                local box = espTable[plr].box
+                local tag = espTable[plr].tag
+                if onscreen then
+                    box.Visible = true
+                    tag.Visible = CFG.ESP_SHOW_NAME
+                    box.Size = Vector2.new(50,70)
+                    box.Position = Vector2.new(pos.X - 25,pos.Y - 35)
+                    tag.Text = plr.Name
+                    tag.Position = Vector2.new(pos.X, pos.Y - 50)
+                else
+                    box.Visible = false
+                    tag.Visible = false
+                end
+            end
+        else
+            removeESPForPlayer(plr)
+        end
+    end
+end)
+
+-- Target functions
+local function predictPos(part, hrp)
+    if not CFG.USE_PREDICTION then
+        return part.Position
+    end
+    local vel = hrp.Velocity
+    return part.Position + vel * (1/CFG.BULLET_SPEED) * CFG.PREDICT_MULT * 100
+end
+
+local function pickBest()
+    local best, bestMag = nil, math.huge
+    for _,plr in ipairs(Players:GetPlayers()) do
+        if plr ~= LocalPlayer and plr.Character and plr.Character:FindFirstChild(CFG.LOCK_PART) then
+            local part = plr.Character[CFG.LOCK_PART]
+            local screenPos, vis = Camera:WorldToViewportPoint(part.Position)
+            if vis then
+                local dist = (Vector2.new(screenPos.X,screenPos.Y) - Vector2.new(Camera.ViewportSize.X/2,Camera.ViewportSize.Y/2)).Magnitude
+                if dist < bestMag and dist < CFG.FOV_PIXELS then
+                    best = {part = part, hrp = plr.Character:FindFirstChild("HumanoidRootPart")}
+                    bestMag = dist
+                end
+            end
+        end
+    end
+    if best then
+        targetPart = best.part
+        targetHRP = best.hrp
+    else
+        targetPart = nil
+        targetHRP = nil
+    end
+end
+
+local function aimAt(targetPos)
+    if not targetPos then return end
+    local camCF = Camera.CFrame
+    local dir = (targetPos - camCF.Position).Unit
+    if CFG.AIM_MODE == "Snap" then
+        Camera.CFrame = CFrame.new(camCF.Position, camCF.Position + dir)
+    else
+        local newDir = camCF.LookVector:Lerp(dir, CFG.SMOOTHING)
+        Camera.CFrame = CFrame.new(camCF.Position, camCF.Position + newDir)
+    end
+end
+
+-- Main loop
+RunService.RenderStepped:Connect(function()
+    -- FOV indicator
+    if fovFrame then
+        fovFrame.Position = UDim2.new(0.5,0,0.5,0)
+        fovFrame.Size = UDim2.new(0, CFG.FOV_PIXELS*2, 0, CFG.FOV_PIXELS*2)
+        innerStroke.Thickness = CFG.FOV_THICKNESS
+        innerStroke.Color = CFG.FOV_COLOR
+        fovFrame.Visible = CFG.SHOW_FOV
+    end
+
+    -- Aimlock
+    if aiming then
+        if not targetPart or not targetHRP then
+            pickBest()
+        end
+        if targetPart and targetHRP then
+            local pos = predictPos(targetPart, targetHRP)
+            aimAt(pos)
+        end
+    end
+end)
+
+print("[DeltaAim] Loaded with UI, Settings, ESP, and Aimlock.")
