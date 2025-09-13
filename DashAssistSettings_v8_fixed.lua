@@ -1,9 +1,3 @@
-
--- Smooth Circular Tween to Back + YAW-ONLY Aimlock + Side Animations
--- Executor-friendly, mobile + PC + Controller compatible
--- Circular dash: approaches at ~8 studs then lands 4 studs behind target
--- Aimlock only changes yaw, preserves pitch
-
 -- SERVICES
 local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
