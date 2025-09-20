@@ -1,13 +1,3 @@
-
--- Merged script — modified per user request:
--- Changes:
---  * Replaced position-setting tween logic with velocity-based movement (AssemblyLinearVelocity).
---  * Defaults adjusted: ARC_APPROACH_RADIUS 11->9, MAX_RANGE 40->30, BEHIND/FRONT 4->3, SPEED_SETTING 1.0->0.8
---  * M1 activation delay 0.1->0.15
---  * On-land stud gap updated to 3 (BEHIND_DISTANCE/FRONT_DISTANCE)
---  * Aimlock (camera) made instantaneous (very fast / accurate)
--- Note: this file was generated automatically from user's provided script and lightly refactored.
-
 local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
 local UserInputService = game:GetService("UserInputService")
@@ -27,7 +17,7 @@ end)
 
 -- Default settings updated per request
 local MAX_RANGE = 30
-local ARC_APPROACH_RADIUS = 9
+local ARC_APPROACH_RADIUS = 8
 local BEHIND_DISTANCE = 3
 local FRONT_DISTANCE = 3
 local TOTAL_TIME = 0.3
@@ -194,8 +184,6 @@ local function getNearestTarget(maxRange)
     return nearest, nearestDist
 end
 
--- New movement approach: set AssemblyLinearVelocity to follow computed arc position.
--- This avoids teleporting via CFrame and reduces floating/landing glitches.
 local function smoothArcToTarget(targetModel)
     if busy then return false end
     if not targetModel or not targetModel:FindFirstChild("HumanoidRootPart") then return false end
@@ -281,7 +269,7 @@ local function smoothArcToTarget(targetModel)
         local dt = math.max(0.0001, now - prevTime)
         prevTime = now
         local desiredVelocity = (posNow - HRP.Position) / dt
-        -- apply velocity directly (AssemblyLinearVelocity) to follow the arc smoothly
+        
         pcall(function()
             if HRP and HRP.Parent then
                 HRP.AssemblyLinearVelocity = desiredVelocity
@@ -294,7 +282,6 @@ local function smoothArcToTarget(targetModel)
             end
         end)
 
-        -- Instant aimlock: make camera look directly at target (very fast/accurate)
         if cam and cam.CFrame and targetHRP and targetHRP.Parent then
             pcall(function()
                 local camPos = cam.CFrame.Position
@@ -638,7 +625,6 @@ local function createExtraFrame()
     header.TextColor3 = Color3.fromRGB(25,25,25)
     header.Parent = extraFrame
 
-    -- Studs row (adjusts ARC_APPROACH_RADIUS)
     local studsLabel = Instance.new("TextLabel")
     studsLabel.Size = UDim2.new(0, 70, 0, 28)
     studsLabel.Position = UDim2.new(0, 12, 0, 46)
@@ -787,8 +773,6 @@ adjustBtn.MouseButton1Click:Connect(function()
 end)
 
 
-
--- MINIMIZE / OPEN ANIMS ------------------------------------------------
 local miniFrame = Instance.new("TextButton")
 miniFrame.Size = UDim2.new(0, 100, 0, 45)
 miniFrame.Position = UDim2.new(0.5, -50, 0.5, -22)
