@@ -1,13 +1,3 @@
-
--- Merged script — modified per user request:
--- Changes:
---  * Replaced position-setting tween logic with velocity-based movement (AssemblyLinearVelocity).
---  * Defaults adjusted: ARC_APPROACH_RADIUS 11->9, MAX_RANGE 40->30, BEHIND/FRONT 4->3, SPEED_SETTING 1.0->0.8
---  * M1 activation delay 0.1->0.15
---  * On-land stud gap updated to 3 (BEHIND_DISTANCE/FRONT_DISTANCE)
---  * Aimlock (camera) made instantaneous (very fast / accurate)
--- Note: this file was generated automatically from user's provided script and lightly refactored.
-
 local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
 local UserInputService = game:GetService("UserInputService")
@@ -25,9 +15,8 @@ player.CharacterAdded:Connect(function(char)
     Humanoid = char:WaitForChild("Humanoid")
 end)
 
--- Default settings updated per request
 local MAX_RANGE = 30
-local ARC_APPROACH_RADIUS = 9
+local ARC_APPROACH_RADIUS = 8
 local BEHIND_DISTANCE = 3
 local FRONT_DISTANCE = 3
 local TOTAL_TIME = 0.3
