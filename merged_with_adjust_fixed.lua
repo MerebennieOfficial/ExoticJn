@@ -20,7 +20,7 @@ local ARC_APPROACH_RADIUS = 11
 local BEHIND_DISTANCE = 4
 local FRONT_DISTANCE = 4
 local TOTAL_TIME = 0.3
-local SPEED_SETTING = 1.0 -- 1.0 = default (adjusted by 'Speed')
+local SPEED_SETTING = 1.0
 
 local function getEffectiveTotalTime()
     if SPEED_SETTING <= 0.05 then SPEED_SETTING = 0.05 end
@@ -30,19 +30,18 @@ local MIN_RADIUS = 1.2
 local MAX_RADIUS = 14
 local ANIM_LEFT_ID = 10480796021
 local ANIM_RIGHT_ID = 10480793962
-local PRESS_SFX_ID = 10480793962 -- (kept same as earlier mentions)
+local PRESS_SFX_ID = 10480793962 
 local DASH_SFX_ID = "rbxassetid://72014632956520"
 
 local busy = false
 local currentAnimTrack = nil
 
 local espEnabled = false
-local m1Enabled = false      -- when true, send mobile M1 on each tween activation (once)
-local dashEnabled = false    -- when true, send Dash on each tween activation (once)
-local targetNearMode = false -- when true, always use nearest target; else use selected player if any
+local m1Enabled = false     
+local dashEnabled = false    
+local targetNearMode = false 
 local selectedPlayer = nil
 
--- convenience: get Communicate remote from local character (safe)
 local function getCommunicate()
     local char = player.Character or player.CharacterAdded:Wait()
     if char then
@@ -51,7 +50,6 @@ local function getCommunicate()
     return nil
 end
 
--- safe senders
 local function safeSend(args)
     pcall(function()
         local comm = getCommunicate()
@@ -95,7 +93,6 @@ local function sendM1()
     end)
 end
 
--- === audio instances (UI / dash) ===
 local dashSound = Instance.new("Sound")
 dashSound.Name = "DashSFX"
 dashSound.SoundId = DASH_SFX_ID
@@ -103,7 +100,6 @@ dashSound.Volume = 2.0
 dashSound.Looped = false
 dashSound.Parent = Workspace
 
--- short helpers
 local function shortestAngleDelta(target, current)
     local delta = target - current
     while delta > math.pi do delta = delta - 2*math.pi end
@@ -156,7 +152,6 @@ local function playSideAnimation(isLeft, duration)
     end)
 end
 
--- get nearest target (players + NPC models)
 local function getNearestTarget(maxRange)
     maxRange = maxRange or MAX_RANGE
     if not HRP then return nil end
@@ -188,7 +183,6 @@ local function getNearestTarget(maxRange)
     return nearest, nearestDist
 end
 
--- core: smooth circular arc to target model
 local function smoothArcToTarget(targetModel)
     if busy then return false end
     if not targetModel or not targetModel:FindFirstChild("HumanoidRootPart") then return false end
@@ -294,20 +288,17 @@ local function smoothArcToTarget(targetModel)
     return true
 end
 
--- ============= UI (Settings GUI) =============
-
 local gui = Instance.new("ScreenGui")
 gui.Name = "SettingsGUI_Merged"
 gui.ResetOnSpawn = false
 gui.Parent = player:WaitForChild("PlayerGui")
 
--- Click Sound
+
 local clickSound = Instance.new("Sound")
 clickSound.SoundId = "rbxassetid://6042053626"
 clickSound.Volume = 0.7
 clickSound.Parent = gui
 
--- Draggable Function
 local function makeDraggable(frame)
     local dragToggle, dragStart, startPos
     frame.InputBegan:Connect(function(input)
@@ -331,7 +322,6 @@ local function makeDraggable(frame)
     end)
 end
 
--- UI BUILD -------------------------------------------------------
 local mainFrame = Instance.new("Frame")
 mainFrame.Size = UDim2.new(0, 280, 0, 270)
 mainFrame.Position = UDim2.new(0.5, -140, 0.5, -135)
@@ -344,7 +334,6 @@ mainFrame.ClipsDescendants = true
 mainFrame.Parent = gui
 Instance.new("UICorner", mainFrame).CornerRadius = UDim.new(0, 12)
 
--- open animation
 mainFrame.Visible = true
 mainFrame.Size = UDim2.new(0, 0, 0, 0)
 TweenService:Create(mainFrame, TweenInfo.new(0.4, Enum.EasingStyle.Back, Enum.EasingDirection.Out),
@@ -385,7 +374,6 @@ UIGrid.HorizontalAlignment = Enum.HorizontalAlignment.Center
 UIGrid.VerticalAlignment = Enum.VerticalAlignment.Top
 UIGrid.Parent = buttonHolder
 
--- ESP folder (keeps billboard for target)
 local espFolder = Instance.new("Folder", gui)
 espFolder.Name = "ESPFolder"
 
@@ -817,8 +805,6 @@ makeDraggable(miniFrame)
 -- Finish UI
 print("Settings GUI loaded.")
 
--- === Dash button (mobile-friendly) ===
--- Replaced with the "exact" behavior from circular_tween_no_settings.lua:
 local function createDashButton()
     local screenGui = gui -- use same gui
     local button = Instance.new("ImageButton")
@@ -972,8 +958,6 @@ end)
 
 print("[Merged] Circular tween + Settings updated and ready.")
 
--- === Watermark / Discord Copy UI (merged) ===
--- Added: small watermark popped on screen with copy-to-clipboard behavior.
 do
     local DISCORD_LINK = "https://discord.gg/WY9DYSkZDc"
     local VISIBLE_DURATION = 4
