@@ -1,9 +1,3 @@
---// Merebennie: Merged Circular Tween + Settings (Delta Mobile Compatible)
--- Updated: Dash button behavior copied from circular_tween_no_settings style
--- Changes: removed 0.1 delay before M1/Dash, Target Near mode, selection targets selected player,
--- ESP only shows for the current target (black box 20% transparent with username)
--- File: merged_circular_tween_settings_updated.lua
-
 local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
 local UserInputService = game:GetService("UserInputService")
@@ -12,7 +6,6 @@ local Workspace = game:GetService("Workspace")
 
 local player = Players.LocalPlayer
 
--- Character refs (auto-update on respawn)
 local Character = player.Character or player.CharacterAdded:Wait()
 local HRP = Character:FindFirstChild("HumanoidRootPart")
 local Humanoid = Character:FindFirstChildOfClass("Humanoid")
@@ -22,7 +15,6 @@ player.CharacterAdded:Connect(function(char)
     Humanoid = char:WaitForChild("Humanoid")
 end)
 
--- === Config / assets ===
 local MAX_RANGE = 40
 local ARC_APPROACH_RADIUS = 11
 local BEHIND_DISTANCE = 4
@@ -41,11 +33,9 @@ local ANIM_RIGHT_ID = 10480793962
 local PRESS_SFX_ID = 10480793962 -- (kept same as earlier mentions)
 local DASH_SFX_ID = "rbxassetid://72014632956520"
 
--- state
 local busy = false
 local currentAnimTrack = nil
 
--- dash & m1 toggles (controlled by UI)
 local espEnabled = false
 local m1Enabled = false      -- when true, send mobile M1 on each tween activation (once)
 local dashEnabled = false    -- when true, send Dash on each tween activation (once)
