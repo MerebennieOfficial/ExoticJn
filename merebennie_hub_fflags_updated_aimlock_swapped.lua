@@ -731,13 +731,6 @@ MainTab:CreateButton({
     Name = "Aimlock (Recommend to use unshiftlocked)",
     Callback = function()
         pcall(function()
---// A I M L O C K  - By Merebennie
---// Supports Players + NPCs, smooth nearest-part aiming, no prediction
---// UI: no white flash on click, button press animation, click sound
---// Now: if target is >= 8 studs vertically above you, aim directly at the target's Head.
---//      Otherwise continue aiming at nearest part (smooth switches). Character faces target (yaw),
---//      but will not rotate while ragdolled.
-
 -- Services
 local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
@@ -779,7 +772,7 @@ Button.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 Button.Position = UDim2.new(0.4, 0, 0.5, 0)
 Button.Size = UDim2.new(0, 120, 0, 50)
 Button.Font = Enum.Font.Cartoon
-Button.Text = "Aimlock (Recommend to use unshiftlocked)"
+Button.Text = "Aimlock"
 Button.TextColor3 = Color3.fromRGB(255, 255, 255)
 Button.TextScaled = true
 Button.Active = true
