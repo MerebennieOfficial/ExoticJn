@@ -1134,7 +1134,7 @@ Button.MouseButton1Click:Connect(function()
  else
   target = nil
   aimPosSmoothed = nil
-  Button.Text = "Aimlock (Recommend to use unshiftlocked)"
+  Button.Text = "Aimlock"
  end
 end)
 
