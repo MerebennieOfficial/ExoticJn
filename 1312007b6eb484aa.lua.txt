@@ -1,0 +1,1556 @@
+-- ts file was generated at discord.gg/25ms
+
+
+local vu1 = game.Players.LocalPlayer
+local vu2 = false
+local v3 = game:GetService("UserInputService")
+local vu4 = game.Players
+local vu5 = vu4.LocalPlayer
+game:GetService("TweenService")
+local vu6 = true
+local vu7 = game:GetService("VirtualInputManager")
+local vu8 = 30
+local vu9 = nil
+local vu10 = nil
+local vu11 = nil
+local vu12 = nil
+local vu13 = nil
+local vu14 = nil
+local vu15 = nil
+local vu16 = nil
+local vu17 = nil
+local vu18 = nil
+local vu19 = nil
+local vu20 = nil
+local vu21 = 2
+local vu22 = {
+    Enum.KeyCode.One,
+    Enum.KeyCode.Two,
+    Enum.KeyCode.Three,
+    Enum.KeyCode.Four
+}
+local vu23 = nil
+local vu24 = nil
+local vu25 = nil
+local vu26 = nil
+local vu27 = nil
+local vu28 = nil
+local vu29 = nil
+local vu30 = nil
+local vu31 = nil
+local vu32 = 5
+local vu33 = "rbxassetid://4306994267"
+local vu34 = "rbxassetid://4306994664"
+local vu35 = "rbxassetid://4306994923"
+local vu36 = "rbxassetid://4306995205"
+local vu37 = nil
+local vu38 = nil
+local vu39 = 1
+local vu40 = nil
+local vu41 = true
+local vu42 = 6.8
+local vu43 = 0.4
+local vu44 = 0.3
+local vu45 = nil
+local vu46 = 0
+local v47 = Instance.new("ScreenGui")
+local v48 = Instance.new("TextButton")
+local v49 = Instance.new("ImageButton")
+Instance.new("UICorner")
+local vu50 = 95
+local vu51 = 0.25
+local vu52 = true
+local vu53 = true
+local vu54 = nil
+local vu55 = nil
+local vu56 = vu5:GetMouse()
+local vu57 = true
+local vu58 = math.huge
+local vu59 = game.Workspace.Live:FindFirstChild("Weakest Dummy")
+local vu60 = false
+game:GetService("UserInputService")
+local _ = workspace.CurrentCamera
+local vu61 = game:GetService("Players")
+local v62 = game:GetService("UserInputService")
+local vu63 = workspace.CurrentCamera
+local vu64 = game:GetService("UserInputService")
+local vu65 = game:GetService("StarterGui")
+local v66 = Instance.new("ScreenGui")
+local vu67 = Instance.new("Frame")
+local v68 = Instance.new("UICorner")
+local vu69 = Instance.new("TextLabel")
+local vu70 = Instance.new("TextLabel")
+local vu71 = Instance.new("TextLabel")
+local vu72 = Instance.new("TextLabel")
+local vu73 = Instance.new("TextLabel")
+local vu74 = Instance.new("TextLabel")
+local vu75 = Instance.new("TextLabel")
+local vu76 = Instance.new("TextBox")
+local v77 = Instance.new("UICorner")
+local vu78 = Instance.new("TextBox")
+local v79 = Instance.new("UICorner")
+local vu80 = Instance.new("TextBox")
+local v81 = Instance.new("UICorner")
+local vu82 = Instance.new("TextBox")
+local v83 = Instance.new("UICorner")
+local vu84 = Instance.new("TextBox")
+local v85 = Instance.new("UICorner")
+local vu86 = Instance.new("TextBox")
+local v87 = Instance.new("UICorner")
+local vu88 = Instance.new("TextBox")
+local v89 = Instance.new("UICorner")
+local vu90 = Instance.new("Frame")
+local v91 = Instance.new("UICorner")
+local vu92 = Instance.new("TextLabel")
+local vu93 = Instance.new("TextBox")
+local v94 = Instance.new("UICorner")
+local v95 = Instance.new("UIAspectRatioConstraint")
+local v96 = Instance.new("UIAspectRatioConstraint")
+v66.Parent = game:GetService("CoreGui")
+v66.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+vu67.Parent = v66
+vu67.AnchorPoint = Vector2.new(0.5, 0.5)
+vu67.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+vu67.BackgroundTransparency = 0.3
+vu67.BorderColor3 = Color3.fromRGB(0, 0, 0)
+vu67.BorderSizePixel = 0
+vu67.Position = UDim2.new(0.653061211, 0, 0.327235758, 0)
+vu67.Size = UDim2.new(0.259183675, 0, 0.373983741, 0)
+vu67.Draggable = true
+v68.Parent = vu67
+vu69.Parent = vu67
+vu69.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+vu69.BackgroundTransparency = 1
+vu69.BorderColor3 = Color3.fromRGB(0, 0, 0)
+vu69.BorderSizePixel = 0
+vu69.Position = UDim2.new(0.0433070883, 0, 0.714151323, 0)
+vu69.Size = UDim2.new(0.409448832, 0, 0.0923913047, 0)
+vu69.Font = Enum.Font.SourceSansBold
+vu69.Text = "Duration"
+vu69.TextColor3 = Color3.fromRGB(255, 255, 255)
+vu69.TextSize = 20
+vu69.TextWrapped = true
+vu70.Parent = vu67
+vu70.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+vu70.BackgroundTransparency = 1
+vu70.BorderColor3 = Color3.fromRGB(0, 0, 0)
+vu70.BorderSizePixel = 0
+vu70.Position = UDim2.new(0.0433070883, 0, 0.590211809, 0)
+vu70.Size = UDim2.new(0.409448832, 0, 0.0923913047, 0)
+vu70.Font = Enum.Font.SourceSansBold
+vu70.Text = "SpeedN"
+vu70.TextColor3 = Color3.fromRGB(255, 255, 255)
+vu70.TextSize = 20
+vu70.TextWrapped = true
+vu71.Parent = vu67
+vu71.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+vu71.BackgroundTransparency = 1
+vu71.BorderColor3 = Color3.fromRGB(0, 0, 0)
+vu71.BorderSizePixel = 0
+vu71.Position = UDim2.new(0.0433070883, 0, 0.449305147, 0)
+vu71.Size = UDim2.new(0.409448832, 0, 0.0923913047, 0)
+vu71.Font = Enum.Font.SourceSansBold
+vu71.Text = "m1Dis"
+vu71.TextColor3 = Color3.fromRGB(255, 255, 255)
+vu71.TextSize = 20
+vu71.TextWrapped = true
+vu72.Parent = vu67
+vu72.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+vu72.BackgroundTransparency = 1
+vu72.BorderColor3 = Color3.fromRGB(0, 0, 0)
+vu72.BorderSizePixel = 0
+vu72.Position = UDim2.new(0.0393700786, 0, 0.314496011, 0)
+vu72.Size = UDim2.new(0.409448832, 0, 0.0923913047, 0)
+vu72.Font = Enum.Font.SourceSansBold
+vu72.Text = "Reach"
+vu72.TextColor3 = Color3.fromRGB(255, 255, 255)
+vu72.TextSize = 20
+vu72.TextWrapped = true
+vu73.Parent = vu67
+vu73.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+vu73.BackgroundTransparency = 1
+vu73.BorderColor3 = Color3.fromRGB(0, 0, 0)
+vu73.BorderSizePixel = 0
+vu73.Position = UDim2.new(0.0433070883, 0, 0.178361312, 0)
+vu73.Size = UDim2.new(0.409448832, 0, 0.0923913047, 0)
+vu73.Font = Enum.Font.SourceSansBold
+vu73.Text = "Distance"
+vu73.TextColor3 = Color3.fromRGB(255, 255, 255)
+vu73.TextSize = 20
+vu73.TextWrapped = true
+vu74.Parent = vu67
+vu74.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+vu74.BackgroundTransparency = 1
+vu74.BorderColor3 = Color3.fromRGB(0, 0, 0)
+vu74.BorderSizePixel = 0
+vu74.Position = UDim2.new(0.0433070883, 0, 0.0259223189, 0)
+vu74.Size = UDim2.new(0.409448832, 0, 0.0923913047, 0)
+vu74.Font = Enum.Font.SourceSansBold
+vu74.Text = "Range"
+vu74.TextColor3 = Color3.fromRGB(255, 255, 255)
+vu74.TextSize = 20
+vu74.TextWrapped = true
+vu75.Parent = vu67
+vu75.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+vu75.BackgroundTransparency = 1
+vu75.BorderColor3 = Color3.fromRGB(0, 0, 0)
+vu75.BorderSizePixel = 0
+vu75.Position = UDim2.new(0.0429999903, 0, 0.851304352, 0)
+vu75.Size = UDim2.new(0.409448832, 0, 0.0923913047, 0)
+vu75.Font = Enum.Font.SourceSansBold
+vu75.Text = "Prediction"
+vu75.TextColor3 = Color3.fromRGB(255, 255, 255)
+vu75.TextSize = 20
+vu75.TextWrapped = true
+vu76.Parent = vu67
+vu76.BackgroundColor3 = Color3.fromRGB(125, 125, 125)
+vu76.BorderColor3 = Color3.fromRGB(0, 0, 0)
+vu76.BorderSizePixel = 0
+vu76.Position = UDim2.new(0.842519701, 0, 0.0108695654, 0)
+vu76.Size = UDim2.new(0.0944881886, 0, 0.114130437, 0)
+vu76.Font = Enum.Font.SourceSans
+vu76.Text = "5"
+vu76.TextColor3 = Color3.fromRGB(0, 0, 0)
+vu76.TextSize = 14
+v77.Parent = vu76
+vu78.Parent = vu67
+vu78.BackgroundColor3 = Color3.fromRGB(125, 125, 125)
+vu78.BorderColor3 = Color3.fromRGB(0, 0, 0)
+vu78.BorderSizePixel = 0
+vu78.Position = UDim2.new(0.842519701, 0, 0.163043484, 0)
+vu78.Size = UDim2.new(0.0944881886, 0, 0.114130437, 0)
+vu78.Font = Enum.Font.SourceSans
+vu78.Text = "30"
+vu78.TextColor3 = Color3.fromRGB(0, 0, 0)
+vu78.TextSize = 14
+v79.Parent = vu78
+vu80.Parent = vu67
+vu80.BackgroundColor3 = Color3.fromRGB(125, 125, 125)
+vu80.BorderColor3 = Color3.fromRGB(0, 0, 0)
+vu80.BorderSizePixel = 0
+vu80.Position = UDim2.new(0.842519701, 0, 0.298913032, 0)
+vu80.Size = UDim2.new(0.0944881886, 0, 0.114130437, 0)
+vu80.Font = Enum.Font.SourceSans
+vu80.Text = "0"
+vu80.TextColor3 = Color3.fromRGB(0, 0, 0)
+vu80.TextSize = 14
+v81.Parent = vu80
+vu82.Parent = vu67
+vu82.BackgroundColor3 = Color3.fromRGB(125, 125, 125)
+vu82.BorderColor3 = Color3.fromRGB(0, 0, 0)
+vu82.BorderSizePixel = 0
+vu82.Position = UDim2.new(0.842519701, 0, 0.440217406, 0)
+vu82.Size = UDim2.new(0.0944881886, 0, 0.114130437, 0)
+vu82.Font = Enum.Font.SourceSans
+vu82.Text = "6.8"
+vu82.TextColor3 = Color3.fromRGB(0, 0, 0)
+vu82.TextSize = 14
+v83.Parent = vu82
+vu84.Parent = vu67
+vu84.BackgroundColor3 = Color3.fromRGB(125, 125, 125)
+vu84.BorderColor3 = Color3.fromRGB(0, 0, 0)
+vu84.BorderSizePixel = 0
+vu84.Position = UDim2.new(0.842519701, 0, 0.576086938, 0)
+vu84.Size = UDim2.new(0.0944881886, 0, 0.114130437, 0)
+vu84.Font = Enum.Font.SourceSans
+vu84.Text = "95"
+vu84.TextColor3 = Color3.fromRGB(0, 0, 0)
+vu84.TextSize = 14
+v85.Parent = vu84
+vu86.Parent = vu67
+vu86.BackgroundColor3 = Color3.fromRGB(125, 125, 125)
+vu86.BorderColor3 = Color3.fromRGB(0, 0, 0)
+vu86.BorderSizePixel = 0
+vu86.Position = UDim2.new(0.842519701, 0, 0.717391312, 0)
+vu86.Size = UDim2.new(0.0944881886, 0, 0.114130437, 0)
+vu86.Font = Enum.Font.SourceSans
+vu86.Text = "0.25"
+vu86.TextColor3 = Color3.fromRGB(0, 0, 0)
+vu86.TextSize = 14
+v87.Parent = vu86
+vu88.Parent = vu67
+vu88.BackgroundColor3 = Color3.fromRGB(125, 125, 125)
+vu88.BorderColor3 = Color3.fromRGB(0, 0, 0)
+vu88.BorderSizePixel = 0
+vu88.Position = UDim2.new(0.842519701, 0, 0.851000011, 0)
+vu88.Size = UDim2.new(0.0944881886, 0, 0.114130437, 0)
+vu88.Font = Enum.Font.SourceSans
+vu88.Text = "0.3"
+vu88.TextColor3 = Color3.fromRGB(0, 0, 0)
+vu88.TextSize = 14
+v89.Parent = vu88
+v95.Parent = vu67
+v95.AspectRatio = 1.38
+vu90.Parent = v66
+vu90.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+vu90.BackgroundTransparency = 0.3
+vu90.BorderColor3 = Color3.fromRGB(0, 0, 0)
+vu90.BorderSizePixel = 0
+vu90.Position = UDim2.new(0.523469388, 0, 0.514227629, 0)
+vu90.Size = UDim2.new(0.259183675, 0, 0.100000001, 0)
+v91.CornerRadius = UDim.new(0, 5)
+v91.Parent = vu90
+vu92.Parent = vu90
+vu92.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+vu92.BackgroundTransparency = 1
+vu92.BorderColor3 = Color3.fromRGB(0, 0, 0)
+vu92.BorderSizePixel = 0
+vu92.Position = UDim2.new(0.050874006, 0, 0.201913476, 0)
+vu92.Size = UDim2.new(0.409448832, 0, 0.400333911, 0)
+vu92.Font = Enum.Font.SourceSansBold
+vu92.Text = "Backdash Cancel move"
+vu92.TextColor3 = Color3.fromRGB(255, 255, 255)
+vu92.TextSize = 20
+vu92.TextWrapped = true
+vu93.Parent = vu90
+vu93.BackgroundColor3 = Color3.fromRGB(125, 125, 125)
+vu93.BorderColor3 = Color3.fromRGB(0, 0, 0)
+vu93.BorderSizePixel = 0
+vu93.Position = UDim2.new(0.850393713, 0, 0.200594768, 0)
+vu93.Size = UDim2.new(0.0944881886, 0, 0.494530052, 0)
+vu93.Font = Enum.Font.SourceSans
+vu93.Text = "2"
+vu93.TextColor3 = Color3.fromRGB(0, 0, 0)
+vu93.TextSize = 14
+v94.Parent = vu93
+v96.Parent = vu90
+v96.AspectRatio = 5.163
+if vu64.TouchEnabled and not (vu64.KeyboardEnabled and (vu64.GamepadEnabled and vu65:IsTenFootInterface())) then
+    v47.Parent = game.CoreGui
+    v47.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+    v48.Parent = v47
+    v48.Position = UDim2.new(0.818, 0, 0.146, 0)
+    v48.Size = UDim2.new(0, 46, 0, 28)
+    v48.Text = "On/Off"
+    v48.TextSize = 14
+    v49.Parent = v66
+    v49.BackgroundColor3 = Color3.fromRGB(12, 12, 12)
+    v49.BackgroundTransparency = 0.3
+    v49.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    v49.BorderSizePixel = 0
+    v49.Position = UDim2.new(0.15976575, 0, 0.0619156398, 0)
+    v49.Size = UDim2.new(0.0889796019, 0, 0.16869919, 0)
+    v49.Image = "rbxassetid://18274894738"
+    v68.CornerRadius = UDim.new(0, 50)
+    v68.Parent = v49
+end
+vu76.FocusLost:Connect(function(p97)
+    if p97 then
+        vu32 = tonumber(vu76.Text)
+    end
+end)
+vu78.FocusLost:Connect(function(p98)
+    if p98 then
+        vu8 = tonumber(vu78.Text)
+    end
+end)
+vu80.FocusLost:Connect(function(p99)
+    if p99 then
+        vu46 = tonumber(vu80.Text)
+    end
+end)
+vu82.FocusLost:Connect(function(p100)
+    if p100 then
+        vu42 = tonumber(vu82.Text)
+    end
+end)
+vu84.FocusLost:Connect(function(p101)
+    if p101 then
+        vu50 = tonumber(vu84.Text)
+    end
+end)
+vu86.FocusLost:Connect(function(p102)
+    if p102 then
+        vu51 = tonumber(vu86.Text)
+    end
+end)
+vu88.FocusLost:Connect(function(p103)
+    if p103 then
+        vu44 = tonumber(vu88.Text)
+    end
+end)
+vu93.FocusLost:Connect(function(p104)
+    if p104 then
+        vu21 = tonumber(vu93.Text)
+    end
+end)
+local function vu106(p105)
+    p105:WaitForChild("Humanoid"):GetPropertyChangedSignal("AutoRotate"):Connect(function()
+        print(true)
+        if vu45 == true and game.Players.LocalPlayer.Character.Humanoid.AutoRotate == true then
+            game.Players.LocalPlayer.Character.Humanoid.AutoRotate = false
+        end
+    end)
+end
+local function vu107()
+    game:GetService("Players").LocalPlayer.Character.Communicate:FireServer({
+        Dash = Enum.KeyCode.A,
+        Key = Enum.KeyCode.Q,
+        Goal = "KeyPress"
+    })
+end
+local function vu110(p108)
+    if p108 then
+        local v109 = Instance.new("Highlight")
+        v109.Parent = p108
+        v109.OutlineColor = Color3.fromRGB(0, 100, 0)
+        v109.FillTransparency = 0.5
+        v109.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+    end
+end
+local function vu116(p111)
+    local v112, v113, v114 = ipairs(p111:GetDescendants())
+    while true do
+        local v115
+        v114, v115 = v112(v113, v114)
+        if v114 == nil then
+            break
+        end
+        if v115:IsA("Highlight") then
+            v115:Destroy()
+        end
+    end
+end
+local function vu132(p117, p118)
+    local v119 = game.Players.LocalPlayer.Character.HumanoidRootPart
+    if p117 == nil or p117 ~= vu59 then
+        if p117 ~= nil and p117 ~= vu59 then
+            local v120 = p117.Character.HumanoidRootPart
+            local v121 = v120.CFrame.Position - v119.CFrame.Position
+            local v122 = CFrame.fromAxisAngle(Vector3.new(0, p118, 0), math.rad(160)) * v121
+            local v123 = v120.CFrame.Position + v122
+            local v124 = Vector3.new(v123.X, v119.CFrame.Position.Y, v123.Z)
+            local v125 = CFrame.new(v119.CFrame.Position, v124)
+            v119.CFrame = v119.CFrame:Lerp(v125, vu43)
+        end
+    else
+        local v126 = p117.HumanoidRootPart
+        local v127 = v126.CFrame.Position - v119.CFrame.Position
+        local v128 = CFrame.fromAxisAngle(Vector3.new(0, p118, 0), math.rad(160)) * v127
+        local v129 = v126.CFrame.Position + v128
+        local v130 = Vector3.new(v129.X, v119.CFrame.Position.Y, v129.Z)
+        local v131 = CFrame.new(v119.CFrame.Position, v130)
+        v119.CFrame = v119.CFrame:Lerp(v131, vu43)
+    end
+end
+local function vu141(p133)
+    local v134 = game.Players.LocalPlayer.Character.HumanoidRootPart
+    if p133 == nil or p133 ~= vu59 then
+        if p133 ~= nil and p133 ~= vu59 then
+            local v135 = (p133.Character.HumanoidRootPart.CFrame.Position - v134.CFrame.Position).Unit
+            local v136 = v134.CFrame.Position - v135
+            local v137 = Vector3.new(v136.X, v134.CFrame.Position.Y, v136.Z)
+            v134.CFrame = CFrame.new(v134.CFrame.Position, v137)
+        end
+    else
+        local v138 = (p133.HumanoidRootPart.CFrame.Position - v134.CFrame.Position).Unit
+        local v139 = v134.CFrame.Position - v138
+        local v140 = Vector3.new(v139.X, v134.CFrame.Position.Y, v139.Z)
+        v134.CFrame = CFrame.new(v134.CFrame.Position, v140)
+    end
+end
+local function vu146(p142)
+    vu59 = game.Workspace.Live:FindFirstChild("Weakest Dummy")
+    local v143 = workspace.CurrentCamera
+    if p142 == nil or p142 ~= vu59 then
+        if p142 ~= nil and p142 ~= vu59 then
+            local v144 = Vector3.new(p142.Character.HumanoidRootPart.CFrame.Position.X, 438, p142.Character.HumanoidRootPart.CFrame.Position.Z)
+            v143.CFrame = CFrame.new(v143.CFrame.Position, v144)
+        end
+    else
+        local v145 = Vector3.new(p142.HumanoidRootPart.CFrame.Position.X, 438, p142.HumanoidRootPart.CFrame.Position.Z)
+        v143.CFrame = CFrame.new(v143.CFrame.Position, v145)
+    end
+end
+local function vu153(p147)
+    vu59 = game.Workspace.Live:FindFirstChild("Weakest Dummy")
+    local v148 = vu63:ScreenPointToRay(p147.X, p147.Y)
+    local v149 = RaycastParams.new()
+    v149.FilterDescendantsInstances = {
+        vu61.LocalPlayer.Character
+    }
+    v149.FilterType = Enum.RaycastFilterType.Blacklist
+    local v150 = workspace:Raycast(v148.Origin, v148.Direction * 1000, v149)
+    if v150 then
+        local v151 = v150.Instance:FindFirstAncestorOfClass("Model")
+        local v152 = vu61:GetPlayerFromCharacter(v151)
+        if v152 then
+            vu60 = not vu60
+            if vu60 then
+                vu55 = v152
+                vu110(vu55.Character)
+            end
+        else
+            vu60 = v151 and v151:FindFirstChild("HumanoidRootPart") and not (vu61:GetPlayerFromCharacter(v151) or vu60)
+            if vu60 then
+                vu55 = vu59
+                vu110(vu55)
+            end
+        end
+    end
+end
+v62.InputBegan:Connect(function(p154, p155)
+    if not p155 then
+        if p154.UserInputType == Enum.UserInputType.Touch then
+            local v156, v157, v158 = pairs(game.Players:GetChildren())
+            while true do
+                local v159
+                v158, v159 = v156(v157, v158)
+                if v158 == nil then
+                    break
+                end
+                if v159 ~= game.Players.LocalPlayer then
+                    vu54 = v159
+                end
+            end
+            if vu54 or game.Workspace.Live:FindFirstChild("Weakest Dummy") then
+                vu153(p154.Position)
+                if vu60 == false then
+                    vu59 = game.Workspace.Live:FindFirstChild("Weakest Dummy")
+                    if vu55 ~= vu59 then
+                        if vu55 ~= nil then
+                            vu116(vu55.Character)
+                            vu55 = nil
+                        else
+                            vu55 = nil
+                        end
+                    else
+                        vu116(vu55)
+                        vu55 = nil
+                    end
+                end
+            end
+        end
+    end
+end)
+function GetTarget()
+    vu64 = game:GetService("UserInputService")
+    vu65 = game:GetService("StarterGui")
+    if vu64.KeyboardEnabled then
+        vu59 = game.Workspace.Live:FindFirstChild("Weakest Dummy")
+        if vu59 then
+            vu37 = vu59.HumanoidRootPart.CFrame.Position
+        end
+        local v160 = vu56.Hit.p
+        local v161, v162, v163 = pairs(game.Players:GetPlayers())
+        while true do
+            local v164
+            v163, v164 = v161(v162, v163)
+            if v163 == nil then
+                break
+            end
+            if v164 ~= vu5 and v164.Character then
+                local v165 = v164.Character.HumanoidRootPart.CFrame.Position
+                if (v165 - v160).Magnitude < vu58 then
+                    vu58 = (v165 - v160).Magnitude
+                    vu55 = v164
+                end
+            end
+        end
+        if vu59 then
+            if (vu37 - v160).Magnitude >= vu58 then
+                vu110(vu55.Character)
+            else
+                vu55 = vu59
+                vu110(vu55)
+            end
+        else
+            vu110(vu55.Character)
+        end
+    end
+end
+local function vu168()
+    if click then
+        local v166 = vu4.LocalPlayer.Character.Communicate
+        local v167 = {
+            {
+                Goal = "KeyRelease",
+                Key = Enum.KeyCode.F
+            }
+        }
+        game:GetService("Players").LocalPlayer.Character:WaitForChild("Communicate"):FireServer(unpack(v167))
+        v166:FireServer({
+            Mobile = true,
+            Goal = "LeftClick"
+        })
+        v166:FireServer({
+            Mobile = true,
+            Goal = "LeftClickRelease"
+        })
+    end
+end
+local function vu172()
+    if vu6 == true then
+        vu6 = false
+        local v169 = (vu1.Character or vu1.CharacterAdded:Wait()):WaitForChild("Humanoid")
+        local v170 = v169:FindFirstChildOfClass("Animator") or Instance.new("Animator", v169)
+        local v171 = Instance.new("Animation")
+        v171.AnimationId = "rbxassetid://10480796021"
+        v170:LoadAnimation(v171):Play()
+    end
+end
+local function vu176()
+    local v173 = (vu1.Character or vu1.CharacterAdded:Wait()):WaitForChild("Humanoid")
+    local v174 = v173:FindFirstChildOfClass("Animator") or Instance.new("Animator", v173)
+    local v175 = Instance.new("Animation")
+    v175.AnimationId = "rbxassetid://10491993682"
+    v174:LoadAnimation(v175):Play()
+end
+local function vu180()
+    if vu6 == true then
+        vu6 = false
+        local v177 = (vu1.Character or vu1.CharacterAdded:Wait()):WaitForChild("Humanoid")
+        local v178 = v177:FindFirstChildOfClass("Animator") or Instance.new("Animator", v177)
+        local v179 = Instance.new("Animation")
+        v179.AnimationId = "rbxassetid://10480793962"
+        v178:LoadAnimation(v179):Play()
+    end
+end
+game.Players.PlayerRemoving:Connect(function(p181)
+    if vu55 == p181 then
+        vu55 = nil
+        vu60 = false
+    end
+end)
+task.spawn(function()
+    while true do
+        repeat
+            task.wait()
+        until vu60
+        vu59 = game.Workspace.Live:FindFirstChild("Weakest Dummy")
+        if vu55 == nil or vu55 ~= vu59 then
+            if vu55 ~= nil and vu55 ~= vu59 then
+                local v182 = vu55.Character:FindFirstChild("Humanoid")
+                if v182 and v182.Health == 0 then
+                    vu60 = false
+                    vu116(vu55.Character)
+                    vu55 = nil
+                end
+            end
+        elseif vu55.Humanoid.Health == 0 then
+            vu60 = false
+            vu116(vu55)
+            vu55 = nil
+        end
+    end
+end)
+local function vu184(p183)
+    vu7:SendKeyEvent(true, p183, false, game)
+    task.wait()
+    vu7:SendKeyEvent(false, p183, false, game)
+end
+game.DescendantAdded:Connect(function(p185)
+    if p185:IsA("Sound") and (p185 and (p185.SoundId == vu33 or (p185.SoundId == vu34 or (p185.SoundId == vu35 or p185.SoundId == vu36)))) then
+        if vu55 == nil or vu55 ~= vu59 then
+            if vu55 ~= nil and (vu55 ~= vu59 and p185.Parent.Parent.Name == vu55.Character.Name) then
+                vu13 = p185
+            end
+        elseif p185.Parent.Parent.Name == vu55.Name then
+            vu13 = p185
+        end
+        vu13.Played:Connect(function()
+            if vu12 and not game.Players.LocalPlayer.PlayerGui.Hotbar.Backpack.Hotbar:FindFirstChild(vu21).Base:FindFirstChild("Cooldown") then
+                if vu55 == nil or vu55 == vu59 then
+                    if vu55 ~= nil and vu55 == vu59 then
+                        vu141(vu55)
+                        local vu186 = game.Players.LocalPlayer.Character.HumanoidRootPart
+                        local vu187 = nil
+                        vu45 = true
+                        game.Players.LocalPlayer.Character.Humanoid.AutoRotate = false
+                        if (vu19 - vu186.CFrame.Position).Magnitude >= (vu20 - vu186.CFrame.Position).Magnitude then
+                            vu9 = false
+                        else
+                            vu9 = true
+                        end
+                        local vu188 = Instance.new("LinearVelocity")
+                        vu188.Attachment0 = Instance.new("Attachment", vu186)
+                        vu188.MaxForce = math.huge
+                        vu188.Parent = vu186
+                        vu184()
+                        vu176()
+                        local _ = game:GetService("RunService").Stepped:Connect(function()
+                            vu11 = game.Players.LocalPlayer.Character:FindFirstChild("Freeze")
+                            if vu11 then
+                                vu11:Destroy()
+                            end
+                            vu186 = game.Players.LocalPlayer.Character.HumanoidRootPart
+                            vu15 = (vu55.HumanoidRootPart.Position - vu186.Position).Unit
+                            vu18 = vu55.HumanoidRootPart.CFrame.LookVector
+                            vu23 = Vector3.new(vu15.X, 0, vu15.Z).Unit
+                            vu24 = Vector3.new(vu23.Z, 0, - vu23.X)
+                            vu25 = Vector3.new(- vu23.Z, 0, vu23.X)
+                            vu14 = vu55.HumanoidRootPart.AssemblyLinearVelocity
+                            vu186 = game.Players.LocalPlayer.Character.HumanoidRootPart
+                            vu26 = vu55.HumanoidRootPart.Position + vu24 * vu32
+                            vu27 = vu55.HumanoidRootPart.Position + vu25 * vu32
+                            vu16 = vu26 + vu28 * vu46 + vu14 * vu44
+                            vu17 = vu27 + vu29 * vu46 + vu14 * vu44
+                            if vu9 then
+                                vu10 = vu16 - vu186.Position
+                                vu40 = Vector3.new(vu10.X, 0, vu10.Z).Unit
+                                vu188.VectorVelocity = vu40 * 100
+                            else
+                                vu10 = vu17 - vu186.Position
+                                vu40 = Vector3.new(vu10.X, 0, vu10.Z).Unit
+                                vu188.VectorVelocity = vu40 * 100
+                            end
+                            task.delay(0.14, function()
+                                vu188:Destroy()
+                                vu45 = false
+                                game.Players.LocalPlayer.Character.Humanoid.AutoRotate = true
+                                local vu189 = nil
+                                vu189 = game:GetService("RunService").Stepped:Connect(function()
+                                    vu11 = game.Players.LocalPlayer.Character:FindFirstChild("Freeze")
+                                    if vu11 then
+                                        vu11:Destroy()
+                                    end
+                                    vu146(vu55)
+                                    task.delay(0.2, function()
+                                        vu189:Disconnect()
+                                    end)
+                                end)
+                                vu187:Disconnect()
+                            end)
+                        end)
+                    end
+                else
+                    local vu190 = game.Players.LocalPlayer.Character.HumanoidRootPart
+                    local vu191 = nil
+                    vu45 = true
+                    game.Players.LocalPlayer.Character.Humanoid.AutoRotate = false
+                    if (vu19 - vu190.CFrame.Position).Magnitude >= (vu20 - vu190.CFrame.Position).Magnitude then
+                        vu9 = false
+                    else
+                        vu9 = true
+                    end
+                    local vu192 = Instance.new("LinearVelocity")
+                    vu192.Attachment0 = Instance.new("Attachment", vu190)
+                    vu192.MaxForce = math.huge
+                    vu192.Parent = vu190
+                    vu184(vu22[vu21])
+                    vu176()
+                    local _ = game:GetService("RunService").Stepped:Connect(function()
+                        vu11 = game.Players.LocalPlayer.Character:FindFirstChild("Freeze")
+                        if vu11 then
+                            vu11:Destroy()
+                        end
+                        vu141(vu55)
+                        vu190 = game.Players.LocalPlayer.Character.HumanoidRootPart
+                        vu15 = (vu55.Character.HumanoidRootPart.Position - vu190.Position).Unit
+                        vu18 = vu55.Character.HumanoidRootPart.CFrame.LookVector
+                        vu23 = Vector3.new(vu15.X, 0, vu15.Z).Unit
+                        vu24 = Vector3.new(vu23.Z, 0, - vu23.X)
+                        vu25 = Vector3.new(- vu23.Z, 0, vu23.X)
+                        vu14 = vu55.Character.HumanoidRootPart.AssemblyLinearVelocity
+                        vu190 = game.Players.LocalPlayer.Character.HumanoidRootPart
+                        vu26 = vu55.Character.HumanoidRootPart.Position + vu24 * vu32
+                        vu27 = vu55.Character.HumanoidRootPart.Position + vu25 * vu32
+                        vu16 = vu26 + vu28 * vu46 + vu14 * vu44
+                        vu17 = vu27 + vu29 * vu46 + vu14 * vu44
+                        if vu9 then
+                            vu10 = vu16 - vu190.Position
+                            vu40 = Vector3.new(vu10.X, 0, vu10.Z).Unit
+                            vu192.VectorVelocity = vu40 * 100
+                        else
+                            vu10 = vu17 - vu190.Position
+                            vu40 = Vector3.new(vu10.X, 0, vu10.Z).Unit
+                            vu192.VectorVelocity = vu40 * 100
+                        end
+                        task.delay(0.14, function()
+                            vu192:Destroy()
+                            vu45 = false
+                            game.Players.LocalPlayer.Character.Humanoid.AutoRotate = true
+                            local vu193 = nil
+                            vu193 = game:GetService("RunService").Stepped:Connect(function()
+                                vu11 = game.Players.LocalPlayer.Character:FindFirstChild("Freeze")
+                                if vu11 then
+                                    vu11:Destroy()
+                                end
+                                vu146(vu55)
+                                task.delay(0.2, function()
+                                    vu193:Disconnect()
+                                end)
+                            end)
+                            vu191:Disconnect()
+                        end)
+                    end)
+                end
+            end
+        end)
+    end
+end)
+v3.InputBegan:Connect(function(p194, p195)
+    if not p195 then
+        if p194.KeyCode == Enum.KeyCode.V then
+            local v196, v197, v198 = pairs(game.Players:GetChildren())
+            while true do
+                local v199, v200 = v196(v197, v198)
+                if v199 == nil then
+                    break
+                end
+                v198 = v199
+                if v200 ~= game.Players.LocalPlayer and v200.Name ~= "Weakest Dummy" then
+                    vu54 = v200
+                end
+            end
+            if vu54 or game.Workspace.Live:FindFirstChild("Weakest Dummy") then
+                vu60 = not vu60
+                if vu60 then
+                    vu58 = math.huge
+                    GetTarget()
+                elseif vu55 ~= vu59 then
+                    vu116(vu55.Character)
+                    vu55 = nil
+                else
+                    vu116(vu55)
+                    vu55 = nil
+                end
+            end
+        end
+        if vu60 and (vu55 and (p194.KeyCode == Enum.KeyCode.C or p194.KeyCode == Enum.KeyCode.DPadUp)) then
+            local v201 = game.Players.LocalPlayer.Character.HumanoidRootPart
+            if game.Players.LocalPlayer.Character:FindFirstChild("Freeze") then
+                return
+            end
+            if game.Players.LocalPlayer.Character:FindFirstChild("NoDash") then
+                return
+            end
+            if game.Players.LocalPlayer.Character:FindFirstChild("Slowed") then
+                return
+            end
+            if game.Players.LocalPlayer.Character:FindFirstChild("ComboStun") then
+                return
+            end
+            if v201.Position.Y <= 442 then
+                if vu55 == nil or vu55 ~= vu59 then
+                    if vu55 ~= nil and (vu55 ~= vu59 and vu55.Character.HumanoidRootPart.Position.Y <= 448) then
+                        local vu202 = game.Players.LocalPlayer.Character.HumanoidRootPart
+                        if (vu55.Character.HumanoidRootPart.CFrame.Position - vu202.CFrame.Position).Magnitude <= vu8 and vu57 == true then
+                            vu12 = true
+                            local vu203 = Instance.new("LinearVelocity")
+                            vu203.Attachment0 = Instance.new("Attachment", vu202)
+                            vu203.MaxForce = math.huge
+                            vu203.Parent = vu202
+                            click = true
+                            vu57 = false
+                            vu2 = false
+                            vu53 = true
+                            vu52 = true
+                            vu107()
+                            if vu2 == false then
+                                task.delay(vu51, function()
+                                    vu203:Destroy()
+                                    vu45 = false
+                                    vu53 = false
+                                    vu2 = true
+                                    vu6 = true
+                                    local vu204 = nil
+                                    vu204 = game:GetService("RunService").Stepped:Connect(function()
+                                        vu146(vu55)
+                                        task.delay(0.2, function()
+                                            vu204:Disconnect()
+                                        end)
+                                    end)
+                                    task.delay(vu39, function()
+                                        vu57 = true
+                                    end)
+                                    task.delay(0.45, function()
+                                        vu12 = false
+                                    end)
+                                end)
+                                local vu205 = nil
+                                vu205 = game:GetService("RunService").Stepped:Connect(function()
+                                    if vu53 then
+                                        if (vu55.Character.HumanoidRootPart.Position - vu202.Position).Magnitude <= vu42 then
+                                            vu168()
+                                            click = false
+                                        end
+                                    else
+                                        vu205:Disconnect()
+                                    end
+                                end)
+                                local vu206 = (vu55.Character.HumanoidRootPart.Position - vu202.Position).Unit
+                                vu18 = vu55.Character.HumanoidRootPart.CFrame.LookVector
+                                vu19 = vu55.Character.HumanoidRootPart.CFrame.Position + vu55.Character.HumanoidRootPart.CFrame.RightVector * 2
+                                vu20 = vu55.Character.HumanoidRootPart.CFrame.Position - vu55.Character.HumanoidRootPart.CFrame.RightVector * 2
+                                vu23 = Vector3.new(vu206.X, 0, vu206.Z).Unit
+                                vu24 = Vector3.new(vu23.Z, 0, - vu23.X)
+                                vu25 = Vector3.new(- vu23.Z, 0, vu23.X)
+                                vu26 = vu55.Character.HumanoidRootPart.Position + vu24 * vu32
+                                vu27 = vu55.Character.HumanoidRootPart.Position + vu25 * vu32
+                                vu28 = (vu26 - vu202.Position).Unit
+                                vu29 = (vu27 - vu202.Position).Unit
+                                vu30 = (vu26 - vu202.Position).Unit
+                                vu31 = (vu27 - vu202.Position).Unit
+                                if (vu19 - vu202.CFrame.Position).Magnitude >= (vu20 - vu202.CFrame.Position).Magnitude then
+                                    vu9 = false
+                                    if vu18:Dot(vu206) >= 0 then
+                                        if vu18:Dot(vu206) > 0 then
+                                            vu38 = true
+                                            vu45 = true
+                                            vu172()
+                                            game.Players.LocalPlayer.Character.Humanoid.AutoRotate = false
+                                            local vu207 = nil
+                                            vu207 = game:GetService("RunService").Stepped:Connect(function()
+                                                vu132(vu55, - 1)
+                                                if vu53 == false then
+                                                    vu207:Disconnect()
+                                                end
+                                            end)
+                                        end
+                                    else
+                                        vu38 = false
+                                        vu45 = true
+                                        vu180()
+                                        game.Players.LocalPlayer.Character.Humanoid.AutoRotate = false
+                                        local vu208 = nil
+                                        vu208 = game:GetService("RunService").Stepped:Connect(function()
+                                            vu132(vu55, 1)
+                                            if vu53 == false then
+                                                vu208:Disconnect()
+                                            end
+                                        end)
+                                    end
+                                else
+                                    vu9 = true
+                                    if vu18:Dot(vu206) >= 0 then
+                                        if vu18:Dot(vu206) > 0 then
+                                            vu38 = true
+                                            vu45 = true
+                                            vu180()
+                                            game.Players.LocalPlayer.Character.Humanoid.AutoRotate = false
+                                            local vu209 = nil
+                                            vu209 = game:GetService("RunService").Stepped:Connect(function()
+                                                vu132(vu55, 1)
+                                                if vu53 == false then
+                                                    vu209:Disconnect()
+                                                end
+                                            end)
+                                        end
+                                    else
+                                        vu38 = false
+                                        vu45 = true
+                                        vu172()
+                                        game.Players.LocalPlayer.Character.Humanoid.AutoRotate = false
+                                        local vu210 = nil
+                                        vu210 = game:GetService("RunService").Stepped:Connect(function()
+                                            vu132(vu55, - 1)
+                                            if vu53 == false then
+                                                vu210:Disconnect()
+                                            end
+                                        end)
+                                    end
+                                end
+                                local vu211 = nil
+                                vu211 = game:GetService("RunService").Stepped:Connect(function()
+                                    if vu53 then
+                                        if vu55 ~= nil and vu55 ~= vu59 then
+                                            vu202 = game.Players.LocalPlayer.Character.HumanoidRootPart
+                                            vu206 = (vu55.Character.HumanoidRootPart.Position - vu202.Position).Unit
+                                            vu18 = vu55.Character.HumanoidRootPart.CFrame.LookVector
+                                            vu23 = Vector3.new(vu206.X, 0, vu206.Z).Unit
+                                            vu24 = Vector3.new(vu23.Z, 0, - vu23.X)
+                                            vu25 = Vector3.new(- vu23.Z, 0, vu23.X)
+                                            vu14 = vu55.Character.HumanoidRootPart.AssemblyLinearVelocity
+                                            vu202 = game.Players.LocalPlayer.Character.HumanoidRootPart
+                                            vu26 = vu55.Character.HumanoidRootPart.Position + vu24 * vu32
+                                            vu27 = vu55.Character.HumanoidRootPart.Position + vu25 * vu32
+                                            vu16 = vu26 + vu28 * vu46 + vu14 * vu44
+                                            vu17 = vu27 + vu29 * vu46 + vu14 * vu44
+                                            if vu9 then
+                                                vu10 = vu16 - vu202.Position
+                                                vu40 = Vector3.new(vu10.X, 0, vu10.Z).Unit
+                                                vu203.VectorVelocity = vu40 * vu50
+                                            else
+                                                vu10 = vu17 - vu202.Position
+                                                vu40 = Vector3.new(vu10.X, 0, vu10.Z).Unit
+                                                vu203.VectorVelocity = vu40 * vu50
+                                            end
+                                            task.delay(vu51, function()
+                                                vu53 = false
+                                            end)
+                                        end
+                                    else
+                                        vu211:Disconnect()
+                                    end
+                                end)
+                            end
+                        end
+                    end
+                elseif vu55.HumanoidRootPart.Position.Y <= 448 then
+                    local vu212 = game.Players.LocalPlayer.Character.HumanoidRootPart
+                    if (vu55.HumanoidRootPart.CFrame.Position - vu212.CFrame.Position).Magnitude <= vu8 and vu57 == true then
+                        local vu213 = Instance.new("LinearVelocity")
+                        vu213.Attachment0 = Instance.new("Attachment", vu212)
+                        vu213.MaxForce = math.huge
+                        vu12 = true
+                        vu213.Parent = vu212
+                        click = true
+                        vu57 = false
+                        vu2 = false
+                        vu53 = true
+                        vu52 = true
+                        vu107()
+                        if vu2 == false then
+                            task.delay(vu51, function()
+                                vu213:Destroy()
+                                vu6 = true
+                                vu45 = false
+                                vu53 = false
+                                vu2 = true
+                                local vu214 = nil
+                                vu214 = game:GetService("RunService").Stepped:Connect(function()
+                                    vu146(vu55)
+                                    task.delay(0.2, function()
+                                        vu214:Disconnect()
+                                    end)
+                                end)
+                                task.delay(vu39, function()
+                                    vu57 = true
+                                end)
+                                task.delay(0.45, function()
+                                    vu12 = false
+                                end)
+                            end)
+                            local vu215 = nil
+                            vu215 = game:GetService("RunService").Stepped:Connect(function()
+                                if vu53 then
+                                    if (vu55.HumanoidRootPart.Position - vu212.Position).Magnitude <= vu42 then
+                                        vu168()
+                                        click = false
+                                    end
+                                else
+                                    vu215:Disconnect()
+                                end
+                            end)
+                            vu15 = (vu55.HumanoidRootPart.Position - vu212.Position).Unit
+                            vu18 = vu55.HumanoidRootPart.CFrame.LookVector
+                            vu23 = Vector3.new(vu15.X, 0, vu15.Z).Unit
+                            vu24 = Vector3.new(vu23.Z, 0, - vu23.X)
+                            vu25 = Vector3.new(- vu23.Z, 0, vu23.X)
+                            vu19 = vu55.HumanoidRootPart.CFrame.Position + vu55.HumanoidRootPart.CFrame.RightVector * 2
+                            vu20 = vu55.HumanoidRootPart.CFrame.Position - vu55.HumanoidRootPart.CFrame.RightVector * 2
+                            vu26 = vu55.HumanoidRootPart.Position + vu24 * vu32
+                            vu27 = vu55.HumanoidRootPart.Position + vu25 * vu32
+                            vu28 = (vu26 - vu212.Position).Unit
+                            vu29 = (vu27 - vu212.Position).Unit
+                            vu30 = (vu26 - vu212.Position).Unit
+                            vu31 = (vu27 - vu212.Position).Unit
+                            if (vu19 - vu212.CFrame.Position).Magnitude >= (vu20 - vu212.CFrame.Position).Magnitude then
+                                vu9 = false
+                                if vu18:Dot(vu15) >= 0 then
+                                    if vu18:Dot(vu15) > 0 then
+                                        vu38 = true
+                                        vu45 = true
+                                        vu172()
+                                        game.Players.LocalPlayer.Character.Humanoid.AutoRotate = false
+                                        local vu216 = nil
+                                        vu216 = game:GetService("RunService").Stepped:Connect(function()
+                                            vu132(vu55, - 1)
+                                            if vu53 == false then
+                                                vu216:Disconnect()
+                                            end
+                                        end)
+                                    end
+                                else
+                                    vu38 = false
+                                    vu45 = true
+                                    vu180()
+                                    game.Players.LocalPlayer.Character.Humanoid.AutoRotate = false
+                                    local vu217 = nil
+                                    vu217 = game:GetService("RunService").Stepped:Connect(function()
+                                        vu132(vu55, 1)
+                                        if vu53 == false then
+                                            vu217:Disconnect()
+                                        end
+                                    end)
+                                end
+                            else
+                                vu9 = true
+                                if vu18:Dot(vu15) >= 0 then
+                                    if vu18:Dot(vu15) > 0 then
+                                        vu38 = true
+                                        vu45 = true
+                                        vu180()
+                                        game.Players.LocalPlayer.Character.Humanoid.AutoRotate = false
+                                        local vu218 = nil
+                                        vu218 = game:GetService("RunService").Stepped:Connect(function()
+                                            vu132(vu55, 1)
+                                            if vu53 == false then
+                                                vu218:Disconnect()
+                                            end
+                                        end)
+                                    end
+                                else
+                                    vu38 = false
+                                    vu45 = true
+                                    vu172()
+                                    game.Players.LocalPlayer.Character.Humanoid.AutoRotate = false
+                                    local vu219 = nil
+                                    vu219 = game:GetService("RunService").Stepped:Connect(function()
+                                        vu132(vu55, - 1)
+                                        if vu53 == false then
+                                            vu219:Disconnect()
+                                        end
+                                    end)
+                                end
+                            end
+                            local vu220 = nil
+                            vu220 = game:GetService("RunService").Stepped:Connect(function()
+                                if vu53 then
+                                    if vu55 ~= nil and vu55 == vu59 then
+                                        vu15 = (vu55.HumanoidRootPart.Position - vu212.Position).Unit
+                                        vu23 = Vector3.new(vu15.X, 0, vu15.Z).Unit
+                                        vu24 = Vector3.new(vu23.Z, 0, - vu23.X)
+                                        vu25 = Vector3.new(- vu23.Z, 0, vu23.X)
+                                        vu14 = vu55.HumanoidRootPart.AssemblyLinearVelocity
+                                        vu212 = game.Players.LocalPlayer.Character.HumanoidRootPart
+                                        vu26 = vu55.HumanoidRootPart.Position + vu24 * vu32
+                                        vu27 = vu55.HumanoidRootPart.Position + vu25 * vu32
+                                        vu16 = vu26 + vu28 * vu46 + vu14 * vu44
+                                        vu17 = vu27 + vu29 * vu46 + vu14 * vu44
+                                        if vu9 then
+                                            vu10 = vu16 - vu212.Position
+                                            vu40 = Vector3.new(vu10.X, 0, vu10.Z).Unit
+                                            vu213.VectorVelocity = vu40 * vu50
+                                        else
+                                            vu10 = vu17 - vu212.Position
+                                            vu40 = Vector3.new(vu10.X, 0, vu10.Z).Unit
+                                            vu213.VectorVelocity = vu40 * vu50
+                                        end
+                                        task.delay(vu51, function()
+                                            vu53 = false
+                                        end)
+                                    end
+                                else
+                                    vu220:Disconnect()
+                                end
+                            end)
+                        end
+                    end
+                end
+            end
+        end
+    end
+end)
+v49.MouseButton1Click:Connect(function()
+    local v221 = game.Players.LocalPlayer.Character.HumanoidRootPart
+    if game.Players.LocalPlayer.Character:FindFirstChild("Freeze") then
+        return
+    elseif game.Players.LocalPlayer.Character:FindFirstChild("NoDash") then
+        return
+    elseif game.Players.LocalPlayer.Character:FindFirstChild("Slowed") then
+        return
+    elseif not game.Players.LocalPlayer.Character:FindFirstChild("ComboStun") then
+        if v221.Position.Y <= 442 and (vu60 and vu55) then
+            if vu55 == nil or vu55 ~= vu59 then
+                if vu55 ~= nil and (vu55 ~= vu59 and vu55.Character.HumanoidRootPart.Position.Y <= 448) then
+                    local vu222 = game.Players.LocalPlayer.Character.HumanoidRootPart
+                    if (vu55.Character.HumanoidRootPart.CFrame.Position - vu222.CFrame.Position).Magnitude <= vu8 and vu57 == true then
+                        local vu223 = Instance.new("LinearVelocity")
+                        vu223.Attachment0 = Instance.new("Attachment", vu222)
+                        vu223.MaxForce = math.huge
+                        vu223.Parent = vu222
+                        click = true
+                        vu12 = true
+                        vu57 = false
+                        vu2 = false
+                        vu53 = true
+                        vu52 = true
+                        vu107()
+                        if vu2 == false then
+                            task.delay(vu51, function()
+                                vu45 = false
+                                vu223:Destroy()
+                                vu53 = false
+                                vu2 = true
+                                vu6 = true
+                                local vu224 = nil
+                                vu224 = game:GetService("RunService").Stepped:Connect(function()
+                                    vu146(vu55)
+                                    task.delay(0.2, function()
+                                        vu224:Disconnect()
+                                    end)
+                                end)
+                                task.delay(vu39, function()
+                                    vu57 = true
+                                end)
+                                task.delay(0.45, function()
+                                    vu12 = false
+                                end)
+                            end)
+                            local vu225 = nil
+                            vu225 = game:GetService("RunService").Stepped:Connect(function()
+                                if vu53 then
+                                    if (vu55.Character.HumanoidRootPart.Position - vu222.Position).Magnitude <= vu42 then
+                                        vu168()
+                                        click = false
+                                    end
+                                else
+                                    vu225:Disconnect()
+                                end
+                            end)
+                            vu15 = (vu55.Character.HumanoidRootPart.Position - vu222.Position).Unit
+                            vu18 = vu55.Character.HumanoidRootPart.CFrame.LookVector
+                            vu23 = Vector3.new(vu15.X, 0, vu15.Z).Unit
+                            vu24 = Vector3.new(vu23.Z, 0, - vu23.X)
+                            vu25 = Vector3.new(- vu23.Z, 0, vu23.X)
+                            vu19 = vu55.Character.HumanoidRootPart.CFrame.Position + vu55.Character.HumanoidRootPart.CFrame.RightVector * 2
+                            vu20 = vu55.Character.HumanoidRootPart.CFrame.Position - vu55.Character.HumanoidRootPart.CFrame.RightVector * 2
+                            vu26 = vu55.Character.HumanoidRootPart.Position + vu24 * vu32
+                            vu27 = vu55.Character.HumanoidRootPart.Position + vu25 * vu32
+                            vu28 = (vu26 - vu222.Position).Unit
+                            vu29 = (vu27 - vu222.Position).Unit
+                            vu30 = (vu26 - vu222.Position).Unit
+                            vu31 = (vu27 - vu222.Position).Unit
+                            if (vu19 - vu222.CFrame.Position).Magnitude >= (vu20 - vu222.CFrame.Position).Magnitude then
+                                vu9 = false
+                                if vu18:Dot(vu15) >= 0 then
+                                    if vu18:Dot(vu15) > 0 then
+                                        vu38 = true
+                                        vu45 = true
+                                        vu172()
+                                        game.Players.LocalPlayer.Character.Humanoid.AutoRotate = false
+                                        local vu226 = nil
+                                        vu226 = game:GetService("RunService").Stepped:Connect(function()
+                                            vu132(vu55, - 1)
+                                            if vu53 == false then
+                                                vu226:Disconnect()
+                                            end
+                                        end)
+                                    end
+                                else
+                                    vu38 = false
+                                    vu45 = true
+                                    vu180()
+                                    game.Players.LocalPlayer.Character.Humanoid.AutoRotate = false
+                                    local vu227 = nil
+                                    vu227 = game:GetService("RunService").Stepped:Connect(function()
+                                        vu132(vu55, 1)
+                                        if vu53 == false then
+                                            vu227:Disconnect()
+                                        end
+                                    end)
+                                end
+                            else
+                                vu9 = true
+                                if vu18:Dot(vu15) >= 0 then
+                                    if vu18:Dot(vu15) > 0 then
+                                        vu38 = true
+                                        vu45 = true
+                                        vu180()
+                                        game.Players.LocalPlayer.Character.Humanoid.AutoRotate = false
+                                        local vu228 = nil
+                                        vu228 = game:GetService("RunService").Stepped:Connect(function()
+                                            vu132(vu55, 1)
+                                            if vu53 == false then
+                                                vu228:Disconnect()
+                                            end
+                                        end)
+                                    end
+                                else
+                                    vu38 = false
+                                    vu45 = true
+                                    vu172()
+                                    game.Players.LocalPlayer.Character.Humanoid.AutoRotate = false
+                                    local vu229 = nil
+                                    vu229 = game:GetService("RunService").Stepped:Connect(function()
+                                        vu132(vu55, - 1)
+                                        if vu53 == false then
+                                            vu229:Disconnect()
+                                        end
+                                    end)
+                                end
+                            end
+                            local vu230 = nil
+                            vu230 = game:GetService("RunService").Stepped:Connect(function()
+                                if vu53 then
+                                    if vu55 ~= nil and vu55 ~= vu59 then
+                                        vu222 = game.Players.LocalPlayer.Character.HumanoidRootPart
+                                        vu15 = (vu55.Character.HumanoidRootPart.Position - vu222.Position).Unit
+                                        vu18 = vu55.Character.HumanoidRootPart.CFrame.LookVector
+                                        vu23 = Vector3.new(vu15.X, 0, vu15.Z).Unit
+                                        vu24 = Vector3.new(vu23.Z, 0, - vu23.X)
+                                        vu25 = Vector3.new(- vu23.Z, 0, vu23.X)
+                                        vu14 = vu55.Character.HumanoidRootPart.AssemblyLinearVelocity
+                                        vu222 = game.Players.LocalPlayer.Character.HumanoidRootPart
+                                        vu26 = vu55.Character.HumanoidRootPart.Position + vu24 * vu32
+                                        vu27 = vu55.Character.HumanoidRootPart.Position + vu25 * vu32
+                                        vu16 = vu26 + vu28 * vu46 + vu14 * vu44
+                                        vu17 = vu27 + vu29 * vu46 + vu14 * vu44
+                                        if vu9 then
+                                            vu10 = vu16 - vu222.Position
+                                            vu40 = Vector3.new(vu10.X, 0, vu10.Z).Unit
+                                            vu223.VectorVelocity = vu40 * vu50
+                                        else
+                                            vu10 = vu17 - vu222.Position
+                                            vu40 = Vector3.new(vu10.X, 0, vu10.Z).Unit
+                                            vu223.VectorVelocity = vu40 * vu50
+                                        end
+                                        task.delay(vu51, function()
+                                            vu53 = false
+                                        end)
+                                    end
+                                else
+                                    vu230:Disconnect()
+                                end
+                            end)
+                        end
+                    end
+                end
+            elseif vu55.HumanoidRootPart.Position.Y <= 448 then
+                local vu231 = game.Players.LocalPlayer.Character.HumanoidRootPart
+                if (vu55.HumanoidRootPart.CFrame.Position - vu231.CFrame.Position).Magnitude <= vu8 and vu57 == true then
+                    local vu232 = Instance.new("LinearVelocity")
+                    vu232.Attachment0 = Instance.new("Attachment", vu231)
+                    vu232.MaxForce = math.huge
+                    vu232.Parent = vu231
+                    click = true
+                    vu57 = false
+                    vu2 = false
+                    vu53 = true
+                    vu12 = true
+                    vu52 = true
+                    vu107()
+                    if vu2 == false then
+                        task.delay(vu51, function()
+                            vu45 = false
+                            vu53 = false
+                            vu232:Destroy()
+                            vu2 = true
+                            vu6 = true
+                            local vu233 = nil
+                            vu233 = game:GetService("RunService").Stepped:Connect(function()
+                                vu146(vu55)
+                                task.delay(0.2, function()
+                                    vu233:Disconnect()
+                                end)
+                            end)
+                            task.delay(vu39, function()
+                                vu57 = true
+                            end)
+                            task.delay(0.45, function()
+                                vu12 = false
+                            end)
+                        end)
+                        local vu234 = nil
+                        vu234 = game:GetService("RunService").Stepped:Connect(function()
+                            if vu53 then
+                                if (vu55.HumanoidRootPart.Position - vu231.Position).Magnitude <= vu42 then
+                                    vu168()
+                                    click = false
+                                end
+                            else
+                                vu234:Disconnect()
+                            end
+                        end)
+                        vu15 = (vu55.HumanoidRootPart.Position - vu231.Position).Unit
+                        vu18 = vu55.HumanoidRootPart.CFrame.LookVector
+                        vu19 = vu55.HumanoidRootPart.CFrame.Position + vu55.HumanoidRootPart.CFrame.RightVector * 2
+                        vu20 = vu55.HumanoidRootPart.CFrame.Position - vu55.HumanoidRootPart.CFrame.RightVector * 2
+                        vu23 = Vector3.new(vu15.X, 0, vu15.Z).Unit
+                        vu24 = Vector3.new(vu23.Z, 0, - vu23.X)
+                        vu25 = Vector3.new(- vu23.Z, 0, vu23.X)
+                        vu26 = vu55.HumanoidRootPart.Position + vu24 * vu32
+                        vu27 = vu55.HumanoidRootPart.Position + vu25 * vu32
+                        vu28 = (vu26 - vu231.Position).Unit
+                        vu29 = (vu27 - vu231.Position).Unit
+                        vu30 = (vu26 - vu231.Position).Unit
+                        vu31 = (vu27 - vu231.Position).Unit
+                        if (vu19 - vu231.CFrame.Position).Magnitude >= (vu20 - vu231.CFrame.Position).Magnitude then
+                            vu9 = false
+                            if vu18:Dot(vu15) >= 0 then
+                                if vu18:Dot(vu15) > 0 then
+                                    vu38 = true
+                                    vu45 = true
+                                    vu172()
+                                    game.Players.LocalPlayer.Character.Humanoid.AutoRotate = false
+                                    local vu235 = nil
+                                    vu235 = game:GetService("RunService").Stepped:Connect(function()
+                                        vu132(vu55, - 1)
+                                        if vu53 == false then
+                                            vu235:Disconnect()
+                                        end
+                                    end)
+                                end
+                            else
+                                vu38 = false
+                                vu45 = true
+                                vu180()
+                                game.Players.LocalPlayer.Character.Humanoid.AutoRotate = false
+                                local vu236 = nil
+                                vu236 = game:GetService("RunService").Stepped:Connect(function()
+                                    vu132(vu55, 1)
+                                    if vu53 == false then
+                                        vu236:Disconnect()
+                                    end
+                                end)
+                            end
+                        else
+                            vu9 = true
+                            if vu18:Dot(vu15) >= 0 then
+                                if vu18:Dot(vu15) > 0 then
+                                    vu38 = true
+                                    vu45 = true
+                                    vu180()
+                                    game.Players.LocalPlayer.Character.Humanoid.AutoRotate = false
+                                    local vu237 = nil
+                                    vu237 = game:GetService("RunService").Stepped:Connect(function()
+                                        vu132(vu55, 1)
+                                        if vu53 == false then
+                                            vu237:Disconnect()
+                                        end
+                                    end)
+                                end
+                            else
+                                vu38 = false
+                                vu45 = true
+                                vu172()
+                                game.Players.LocalPlayer.Character.Humanoid.AutoRotate = false
+                                local vu238 = nil
+                                vu238 = game:GetService("RunService").Stepped:Connect(function()
+                                    vu132(vu55, - 1)
+                                    if vu53 == false then
+                                        vu238:Disconnect()
+                                    end
+                                end)
+                            end
+                        end
+                        local vu239 = nil
+                        vu239 = game:GetService("RunService").Stepped:Connect(function()
+                            if vu53 then
+                                if vu55 ~= nil and vu55 == vu59 then
+                                    vu231 = game.Players.LocalPlayer.Character.HumanoidRootPart
+                                    vu15 = (vu55.HumanoidRootPart.Position - vu231.Position).Unit
+                                    vu18 = vu55.HumanoidRootPart.CFrame.LookVector
+                                    vu23 = Vector3.new(vu15.X, 0, vu15.Z).Unit
+                                    vu24 = Vector3.new(vu23.Z, 0, - vu23.X)
+                                    vu25 = Vector3.new(- vu23.Z, 0, vu23.X)
+                                    vu14 = vu55.HumanoidRootPart.AssemblyLinearVelocity
+                                    vu231 = game.Players.LocalPlayer.Character.HumanoidRootPart
+                                    vu26 = vu55.HumanoidRootPart.Position + vu24 * vu32
+                                    vu27 = vu55.HumanoidRootPart.Position + vu25 * vu32
+                                    vu16 = vu26 + vu28 * vu46 + vu14 * vu44
+                                    vu17 = vu27 + vu29 * vu46 + vu14 * vu44
+                                    if vu9 then
+                                        vu10 = vu16 - vu231.Position
+                                        vu40 = Vector3.new(vu10.X, 0, vu10.Z).Unit
+                                        vu232.VectorVelocity = vu40 * vu50
+                                    else
+                                        vu10 = vu17 - vu231.Position
+                                        vu40 = Vector3.new(vu10.X, 0, vu10.Z).Unit
+                                        vu232.VectorVelocity = vu40 * vu50
+                                    end
+                                    task.delay(vu51, function()
+                                        vu53 = false
+                                    end)
+                                end
+                            else
+                                vu239:Disconnect()
+                            end
+                        end)
+                    end
+                end
+            end
+        end
+    end
+end)
+v3.InputBegan:Connect(function(p240, p241)
+    if not p241 then
+        if p240.UserInputType == Enum.UserInputType.Keyboard and p240.KeyCode == Enum.KeyCode.RightAlt then
+            vu41 = not vu41
+            if vu41 then
+                vu76.Visible = true
+                vu78.Visible = true
+                vu80.Visible = true
+                vu82.Visible = true
+                vu84.Visible = true
+                vu86.Visible = true
+                vu88.Visible = true
+                vu69.Visible = true
+                vu70.Visible = true
+                vu71.Visible = true
+                vu72.Visible = true
+                vu73.Visible = true
+                vu74.Visible = true
+                vu75.Visible = true
+                vu67.Visible = true
+                vu90.Visible = true
+                vu93.Visible = true
+                vu92.Visible = true
+            else
+                vu76.Visible = false
+                vu78.Visible = false
+                vu80.Visible = false
+                vu82.Visible = false
+                vu84.Visible = false
+                vu86.Visible = false
+                vu88.Visible = false
+                vu69.Visible = false
+                vu70.Visible = false
+                vu71.Visible = false
+                vu72.Visible = false
+                vu73.Visible = false
+                vu74.Visible = false
+                vu75.Visible = false
+                vu67.Visible = false
+                vu90.Visible = false
+                vu93.Visible = false
+                vu92.Visible = false
+            end
+        end
+    end
+end)
+v48.MouseButton1Click:Connect(function()
+    vu41 = not vu41
+    if vu41 then
+        vu76.Visible = true
+        vu78.Visible = true
+        vu80.Visible = true
+        vu82.Visible = true
+        vu84.Visible = true
+        vu86.Visible = true
+        vu88.Visible = true
+        vu69.Visible = true
+        vu70.Visible = true
+        vu71.Visible = true
+        vu72.Visible = true
+        vu73.Visible = true
+        vu74.Visible = true
+        vu75.Visible = true
+        vu67.Visible = true
+        vu90.Visible = true
+        vu93.Visible = true
+        vu92.Visible = true
+    else
+        vu76.Visible = false
+        vu78.Visible = false
+        vu80.Visible = false
+        vu82.Visible = false
+        vu84.Visible = false
+        vu86.Visible = false
+        vu88.Visible = false
+        vu69.Visible = false
+        vu70.Visible = false
+        vu71.Visible = false
+        vu72.Visible = false
+        vu73.Visible = false
+        vu74.Visible = false
+        vu75.Visible = false
+        vu67.Visible = false
+        vu90.Visible = false
+        vu93.Visible = false
+        vu92.Visible = false
+    end
+end)
+if game.Players.LocalPlayer.Character then
+    vu106(game.Players.LocalPlayer.Character)
+end
+game.Players.LocalPlayer.CharacterAdded:Connect(function(p242)
+    vu106(p242)
+end)
+game:GetService("StarterGui"):SetCore("SendNotification", {
+    Title = "For PC users",
+    Text = "Press V to highlight target and C to active side dash, press RightAlt to show/hide gui",
+    Duration = 5
+})
