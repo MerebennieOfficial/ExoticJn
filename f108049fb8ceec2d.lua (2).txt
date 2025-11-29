@@ -1,0 +1,277 @@
+-- ts file was generated at discord.gg/25ms
+
+
+local fenv = getfenv()
+local _5 = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua"))()
+game:GetService("RunService")
+game:GetService("TweenService")
+game:GetService("UserInputService")
+game:GetService("Workspace")
+local _call17 = game:GetService("VirtualInputManager")
+local _call19 = Instance.new("TextLabel")
+_call19.RichText = true
+local _ = _call17.SendKeyEvent
+_call17.SendKeyEvent = function(_26, _26_2, _26_3, _26_4, _26_5, _26_6, _26_7, _26_8)
+    local _ = _call17.SendKeyEvent
+    local _ = game:GetService("VirtualUser").SetKeyDown
+end
+game:GetService("HttpService")
+local _ = game:GetService("Players").LocalPlayer
+local _ = Enum.KeyCode.K
+Color3.fromRGB(255, 0, 0)
+Color3.fromRGB(255, 0, 0)
+local _call45 = _5:Gradient({
+    ["100"] = {
+        Color = Color3.fromHex("#0d0000"),
+        Transparency = 0,
+    },
+    ["0"] = {
+        Color = Color3.fromHex("#200000"),
+        Transparency = 0,
+    },
+}, {
+    Rotation = 0,
+})
+_5:AddTheme({
+    Outline = Color3.fromHex("#3a0a0a"),
+    Active = Color3.fromHex("#990000"),
+    Text = Color3.fromHex("#ffcccc"),
+    Border = Color3.fromHex("#330000"),
+    ScrollBar = Color3.fromHex("#2e0000"),
+    Hover = Color3.fromHex("#660000"),
+    Placeholder = Color3.fromHex("#0a0000"),
+    Name = "BloodShadow",
+    Dialog = Color3.fromHex("#120000"),
+    Button = Color3.fromHex("#4d0000"),
+    Background = Color3.fromHex("#0a0000"),
+    Icon = Color3.fromHex("#b30000"),
+    Accent = _call45,
+})
+_5:SetFont("rbxassetid://12187377325")
+_5:Localization({
+    Enabled = true,
+    Translations = {
+        en = {
+            AUTOTECH_TITLE = "Dovi's Hub v1.1",
+            SUPA_TECH = "Supa Tech",
+            KIBA_CHAOS_TIME = "Kiba Chaos Time",
+            TECH_HELPER = "Tech Helper",
+            SUPAV2_DELAY = "Supa V2 Delay (ms)",
+            LETHAL_DASH = "Lethal Dash",
+            LOOP_MAX_HEIGHT = "Max Height",
+            COUNTER_TOXIC = "Counter Toxic",
+            RESPAWN = "Respawn at Death",
+            SUPAV2_SPEED = "Supa V2 Speed (x10)",
+            SUPA_BEHIND = "Supa Behind Offset",
+            KIBA_LOCK_TIME = "Kiba Lock Time",
+            FPS_BOOST = "FPS Boost",
+            LETHAL_DASH_DELAY = "Lethal Dash Delay (ms)",
+            TECH_HELPER_LOCK = "Tech Helper Lock Percentage",
+            TECH_HELPER_DELAY = "Tech Helper Delay (ms)",
+            TECH_HELPER_LOOK = "Tech Helper Look Up",
+            KIBA = "Kiba",
+            TECH_HELPER_HOLD = "Tech Helper Hold (ms)",
+            AUTOCOUNTER_DISTANCE = "Counter Distance",
+            ENABLE_FEATURE = "Enable Feature",
+            NO_CLIP = "No Clip Players",
+            KIBA_TWEEN_TIME = "Kiba Tween Time",
+            KIBA_DISTANCE = "Kiba Distance",
+            KIBA_DELAY = "Kiba Delay (s)",
+            AUTO_COUNTER = "Auto Counter",
+            M1_ROTATION = "M1 Rotation",
+            M1_DISTANCE = "M1 Distance",
+            SHOW_CHARACTER = "Show Character",
+            M2_BLOCK = "M2 Block",
+            LOOP_SETTLE_HOLD = "Settle Hold (s)",
+            LOOP_RADIUS = "Loop Radius (studs)",
+            KYOTO_DELAY = "Kyoto Delay (ms)",
+            LOOP_SETTLE_TIME = "Settle Time (s)",
+            SUPA_LOCK = "Lock Percentage",
+            LOOP_DASH_INTERVAL = "Dash Interval (ms)",
+            SUPAV2_DISTANCE = "Teleport Distance",
+            KYOTO_COMBO = "Kyoto Combo",
+            LOOP_DASH_COUNT = "Dash Count",
+            SUPA_RANDOM = "Random Movement",
+            INSTANT_TWISTED = "Instant Twisted",
+            M1_RESET = "M1 Reset",
+            LOOP_DELAY = "Loop Dash Delay (ms)",
+            SUPA_V2 = "Supa V2",
+            SUPAV2_ANGLE = "Random Angle",
+            SUPA_BEHIND_TOGGLE = "Teleport Behind",
+            SUPA_SPEED = "Supa Speed (x10)",
+            LOOP_DASH = "Loop Dash",
+            LOOP_STEPS = "Loop Steps",
+            SUPA_DELAY = "Supa Delay (ms)",
+            UTILITIES = "Utilities",
+            SETTINGS = "Settings",
+            DOWN_SLAM = "True Down Slam",
+        },
+    },
+    Prefix = "loc:",
+    DefaultLanguage = "en",
+})
+_5.TransparencyValue = 0.2
+_5:SetTheme("Dark")
+local _call77 = Color3.fromHex("#a00e0e")
+local _call79 = Color3.fromHex("#490303")
+local _87, _87_2, _87_3 = math.floor(((_call77.R + ((_call79.R - _call77.R) * 0)) * 255))
+local _95, _95_2, _95_3 = math.floor(((_call77.G + ((_call79.G - _call77.G) * 0)) * 255))
+local _103, _103_2, _103_3 = math.floor(((_call77.B + ((_call79.B - _call77.B) * 0)) * 255))
+local _104, _104_2, _104_3 = string.format("<font color=\"rgb(%d,%d,%d)\">%s</font>", _87, _95, _103, "D")
+local _113, _113_2, _113_3 = math.floor(((_call77.R + ((_call79.R - _call77.R) * 0.038461538461538464)) * 255))
+local _121, _121_2, _121_3 = math.floor(((_call77.G + ((_call79.G - _call77.G) * 0.038461538461538464)) * 255))
+local _129, _129_2, _129_3 = math.floor(((_call77.B + ((_call79.B - _call77.B) * 0.038461538461538464)) * 255))
+local _130, _130_2, _130_3 = string.format("<font color=\"rgb(%d,%d,%d)\">%s</font>", _113, _121, _129, "o")
+local _139, _139_2, _139_3 = math.floor(((_call77.R + ((_call79.R - _call77.R) * 0.07692307692307693)) * 255))
+local _147, _147_2, _147_3 = math.floor(((_call77.G + ((_call79.G - _call77.G) * 0.07692307692307693)) * 255))
+local _155, _155_2, _155_3 = math.floor(((_call77.B + ((_call79.B - _call77.B) * 0.07692307692307693)) * 255))
+local _156, _156_2, _156_3 = string.format("<font color=\"rgb(%d,%d,%d)\">%s</font>", _139, _147, _155, "v")
+local _165, _165_2, _165_3 = math.floor(((_call77.R + ((_call79.R - _call77.R) * 0.11538461538461539)) * 255))
+local _173, _173_2, _173_3 = math.floor(((_call77.G + ((_call79.G - _call77.G) * 0.11538461538461539)) * 255))
+local _181, _181_2, _181_3 = math.floor(((_call77.B + ((_call79.B - _call77.B) * 0.11538461538461539)) * 255))
+local _182, _182_2, _182_3 = string.format("<font color=\"rgb(%d,%d,%d)\">%s</font>", _165, _173, _181, "i")
+local _191, _191_2, _191_3 = math.floor(((_call77.R + ((_call79.R - _call77.R) * 0.15384615384615385)) * 255))
+local _199, _199_2, _199_3 = math.floor(((_call77.G + ((_call79.G - _call77.G) * 0.15384615384615385)) * 255))
+local _207, _207_2, _207_3 = math.floor(((_call77.B + ((_call79.B - _call77.B) * 0.15384615384615385)) * 255))
+local _208, _208_2, _208_3 = string.format("<font color=\"rgb(%d,%d,%d)\">%s</font>", _191, _199, _207, "'")
+local _217, _217_2, _217_3 = math.floor(((_call77.R + ((_call79.R - _call77.R) * 0.19230769230769232)) * 255))
+local _225, _225_2, _225_3 = math.floor(((_call77.G + ((_call79.G - _call77.G) * 0.19230769230769232)) * 255))
+local _233, _233_2, _233_3 = math.floor(((_call77.B + ((_call79.B - _call77.B) * 0.19230769230769232)) * 255))
+local _234, _234_2, _234_3 = string.format("<font color=\"rgb(%d,%d,%d)\">%s</font>", _217, _225, _233, "H")
+local _243, _243_2, _243_3 = math.floor(((_call77.R + ((_call79.R - _call77.R) * 0.23076923076923078)) * 255))
+local _251, _251_2, _251_3 = math.floor(((_call77.G + ((_call79.G - _call77.G) * 0.23076923076923078)) * 255))
+local _259, _259_2, _259_3 = math.floor(((_call77.B + ((_call79.B - _call77.B) * 0.23076923076923078)) * 255))
+local _260, _260_2, _260_3 = string.format("<font color=\"rgb(%d,%d,%d)\">%s</font>", _243, _251, _259, "U")
+local _269, _269_2, _269_3 = math.floor(((_call77.R + ((_call79.R - _call77.R) * 0.2692307692307692)) * 255))
+local _277, _277_2, _277_3 = math.floor(((_call77.G + ((_call79.G - _call77.G) * 0.2692307692307692)) * 255))
+local _285, _285_2, _285_3 = math.floor(((_call77.B + ((_call79.B - _call77.B) * 0.2692307692307692)) * 255))
+local _286, _286_2, _286_3 = string.format("<font color=\"rgb(%d,%d,%d)\">%s</font>", _269, _277, _285, "B")
+local _295, _295_2, _295_3 = math.floor(((_call77.R + ((_call79.R - _call77.R) * 0.3076923076923077)) * 255))
+local _303, _303_2, _303_3 = math.floor(((_call77.G + ((_call79.G - _call77.G) * 0.3076923076923077)) * 255))
+local _311, _311_2, _311_3 = math.floor(((_call77.B + ((_call79.B - _call77.B) * 0.3076923076923077)) * 255))
+local _312, _312_2, _312_3 = string.format("<font color=\"rgb(%d,%d,%d)\">%s</font>", _295, _303, _311, "/")
+local _321, _321_2, _321_3 = math.floor(((_call77.R + ((_call79.R - _call77.R) * 0.34615384615384615)) * 255))
+local _329, _329_2, _329_3 = math.floor(((_call77.G + ((_call79.G - _call77.G) * 0.34615384615384615)) * 255))
+local _337, _337_2, _337_3 = math.floor(((_call77.B + ((_call79.B - _call77.B) * 0.34615384615384615)) * 255))
+local _338, _338_2, _338_3 = string.format("<font color=\"rgb(%d,%d,%d)\">%s</font>", _321, _329, _337, "A")
+local _347, _347_2, _347_3 = math.floor(((_call77.R + ((_call79.R - _call77.R) * 0.38461538461538464)) * 255))
+local _355, _355_2, _355_3 = math.floor(((_call77.G + ((_call79.G - _call77.G) * 0.38461538461538464)) * 255))
+local _363, _363_2, _363_3 = math.floor(((_call77.B + ((_call79.B - _call77.B) * 0.38461538461538464)) * 255))
+local _364, _364_2, _364_3 = string.format("<font color=\"rgb(%d,%d,%d)\">%s</font>", _347, _355, _363, "u")
+local _373, _373_2, _373_3 = math.floor(((_call77.R + ((_call79.R - _call77.R) * 0.4230769230769231)) * 255))
+local _381, _381_2, _381_3 = math.floor(((_call77.G + ((_call79.G - _call77.G) * 0.4230769230769231)) * 255))
+local _389, _389_2, _389_3 = math.floor(((_call77.B + ((_call79.B - _call77.B) * 0.4230769230769231)) * 255))
+local _390, _390_2, _390_3 = string.format("<font color=\"rgb(%d,%d,%d)\">%s</font>", _373, _381, _389, "t")
+local _399, _399_2, _399_3 = math.floor(((_call77.R + ((_call79.R - _call77.R) * 0.46153846153846156)) * 255))
+local _407, _407_2, _407_3 = math.floor(((_call77.G + ((_call79.G - _call77.G) * 0.46153846153846156)) * 255))
+local _415, _415_2, _415_3 = math.floor(((_call77.B + ((_call79.B - _call77.B) * 0.46153846153846156)) * 255))
+local _416, _416_2, _416_3 = string.format("<font color=\"rgb(%d,%d,%d)\">%s</font>", _399, _407, _415, "o")
+local _425, _425_2, _425_3 = math.floor(((_call77.R + ((_call79.R - _call77.R) * 0.5)) * 255))
+local _433, _433_2, _433_3 = math.floor(((_call77.G + ((_call79.G - _call77.G) * 0.5)) * 255))
+local _441, _441_2, _441_3 = math.floor(((_call77.B + ((_call79.B - _call77.B) * 0.5)) * 255))
+local _442, _442_2, _442_3 = string.format("<font color=\"rgb(%d,%d,%d)\">%s</font>", _425, _433, _441, "T")
+local _451, _451_2, _451_3 = math.floor(((_call77.R + ((_call79.R - _call77.R) * 0.5384615384615384)) * 255))
+local _459, _459_2, _459_3 = math.floor(((_call77.G + ((_call79.G - _call77.G) * 0.5384615384615384)) * 255))
+local _467, _467_2, _467_3 = math.floor(((_call77.B + ((_call79.B - _call77.B) * 0.5384615384615384)) * 255))
+local _468, _468_2, _468_3 = string.format("<font color=\"rgb(%d,%d,%d)\">%s</font>", _451, _459, _467, "e")
+local _477, _477_2, _477_3 = math.floor(((_call77.R + ((_call79.R - _call77.R) * 0.5769230769230769)) * 255))
+local _485, _485_2, _485_3 = math.floor(((_call77.G + ((_call79.G - _call77.G) * 0.5769230769230769)) * 255))
+local _493, _493_2, _493_3 = math.floor(((_call77.B + ((_call79.B - _call77.B) * 0.5769230769230769)) * 255))
+local _494, _494_2, _494_3 = string.format("<font color=\"rgb(%d,%d,%d)\">%s</font>", _477, _485, _493, "c")
+local _503, _503_2, _503_3 = math.floor(((_call77.R + ((_call79.R - _call77.R) * 0.6153846153846154)) * 255))
+local _511, _511_2, _511_3 = math.floor(((_call77.G + ((_call79.G - _call77.G) * 0.6153846153846154)) * 255))
+local _519, _519_2, _519_3 = math.floor(((_call77.B + ((_call79.B - _call77.B) * 0.6153846153846154)) * 255))
+local _520, _520_2, _520_3 = string.format("<font color=\"rgb(%d,%d,%d)\">%s</font>", _503, _511, _519, "h")
+local _529, _529_2, _529_3 = math.floor(((_call77.R + ((_call79.R - _call77.R) * 0.6538461538461539)) * 255))
+local _537, _537_2, _537_3 = math.floor(((_call77.G + ((_call79.G - _call77.G) * 0.6538461538461539)) * 255))
+local _545, _545_2, _545_3 = math.floor(((_call77.B + ((_call79.B - _call77.B) * 0.6538461538461539)) * 255))
+local _546, _546_2, _546_3 = string.format("<font color=\"rgb(%d,%d,%d)\">%s</font>", _529, _537, _545, " ")
+local _555, _555_2, _555_3 = math.floor(((_call77.R + ((_call79.R - _call77.R) * 0.6923076923076923)) * 255))
+local _563, _563_2, _563_3 = math.floor(((_call77.G + ((_call79.G - _call77.G) * 0.6923076923076923)) * 255))
+local _571, _571_2, _571_3 = math.floor(((_call77.B + ((_call79.B - _call77.B) * 0.6923076923076923)) * 255))
+local _572, _572_2, _572_3 = string.format("<font color=\"rgb(%d,%d,%d)\">%s</font>", _555, _563, _571, "b")
+local _581, _581_2, _581_3 = math.floor(((_call77.R + ((_call79.R - _call77.R) * 0.7307692307692307)) * 255))
+local _589, _589_2, _589_3 = math.floor(((_call77.G + ((_call79.G - _call77.G) * 0.7307692307692307)) * 255))
+local _597, _597_2, _597_3 = math.floor(((_call77.B + ((_call79.B - _call77.B) * 0.7307692307692307)) * 255))
+local _598, _598_2, _598_3 = string.format("<font color=\"rgb(%d,%d,%d)\">%s</font>", _581, _589, _597, "e")
+local _607, _607_2, _607_3 = math.floor(((_call77.R + ((_call79.R - _call77.R) * 0.7692307692307693)) * 255))
+local _615, _615_2, _615_3 = math.floor(((_call77.G + ((_call79.G - _call77.G) * 0.7692307692307693)) * 255))
+local _623, _623_2, _623_3 = math.floor(((_call77.B + ((_call79.B - _call77.B) * 0.7692307692307693)) * 255))
+local _624, _624_2, _624_3 = string.format("<font color=\"rgb(%d,%d,%d)\">%s</font>", _607, _615, _623, "t")
+local _633, _633_2, _633_3 = math.floor(((_call77.R + ((_call79.R - _call77.R) * 0.8076923076923077)) * 255))
+local _641, _641_2, _641_3 = math.floor(((_call77.G + ((_call79.G - _call77.G) * 0.8076923076923077)) * 255))
+local _649, _649_2, _649_3 = math.floor(((_call77.B + ((_call79.B - _call77.B) * 0.8076923076923077)) * 255))
+local _650, _650_2, _650_3 = string.format("<font color=\"rgb(%d,%d,%d)\">%s</font>", _633, _641, _649, "a")
+local _659, _659_2, _659_3 = math.floor(((_call77.R + ((_call79.R - _call77.R) * 0.8461538461538461)) * 255))
+local _667, _667_2, _667_3 = math.floor(((_call77.G + ((_call79.G - _call77.G) * 0.8461538461538461)) * 255))
+local _675, _675_2, _675_3 = math.floor(((_call77.B + ((_call79.B - _call77.B) * 0.8461538461538461)) * 255))
+local _676, _676_2, _676_3 = string.format("<font color=\"rgb(%d,%d,%d)\">%s</font>", _659, _667, _675, " ")
+local _685, _685_2, _685_3 = math.floor(((_call77.R + ((_call79.R - _call77.R) * 0.8846153846153846)) * 255))
+local _693, _693_2, _693_3 = math.floor(((_call77.G + ((_call79.G - _call77.G) * 0.8846153846153846)) * 255))
+local _701, _701_2, _701_3 = math.floor(((_call77.B + ((_call79.B - _call77.B) * 0.8846153846153846)) * 255))
+local _702, _702_2, _702_3 = string.format("<font color=\"rgb(%d,%d,%d)\">%s</font>", _685, _693, _701, "v")
+local _711, _711_2, _711_3 = math.floor(((_call77.R + ((_call79.R - _call77.R) * 0.9230769230769231)) * 255))
+local _719, _719_2, _719_3 = math.floor(((_call77.G + ((_call79.G - _call77.G) * 0.9230769230769231)) * 255))
+local _727, _727_2, _727_3 = math.floor(((_call77.B + ((_call79.B - _call77.B) * 0.9230769230769231)) * 255))
+local _728, _728_2, _728_3 = string.format("<font color=\"rgb(%d,%d,%d)\">%s</font>", _711, _719, _727, "1")
+local _737, _737_2, _737_3 = math.floor(((_call77.R + ((_call79.R - _call77.R) * 0.9615384615384616)) * 255))
+local _745, _745_2, _745_3 = math.floor(((_call77.G + ((_call79.G - _call77.G) * 0.9615384615384616)) * 255))
+local _753, _753_2, _753_3 = math.floor(((_call77.B + ((_call79.B - _call77.B) * 0.9615384615384616)) * 255))
+local _754, _754_2, _754_3 = string.format("<font color=\"rgb(%d,%d,%d)\">%s</font>", _737, _745, _753, ".")
+local _763, _763_2, _763_3 = math.floor(((_call77.R + ((_call79.R - _call77.R) * 1)) * 255))
+local _771, _771_2, _771_3 = math.floor(((_call77.G + ((_call79.G - _call77.G) * 1)) * 255))
+local _779, _779_2, _779_3 = math.floor(((_call77.B + ((_call79.B - _call77.B) * 1)) * 255))
+local _780, _780_2, _780_3 = string.format("<font color=\"rgb(%d,%d,%d)\">%s</font>", _763, _771, _779, "2")
+_5:Popup({
+    Icon = "lucide:smile",
+    Content = "Please join the discord server !",
+    Title = "" .. _104 .. _130 .. _156 .. _182 .. _208 .. _234 .. _260 .. _286 .. _312 .. _338 .. _364 .. _390 .. _416 .. _442 .. _468 .. _494 .. _520 .. _546 .. _572 .. _598 .. _624 .. _650 .. _676 .. _702 .. _728 .. _754 .. _780,
+    Buttons = {
+        [1] = {
+            Callback = function(_784, _784_2, _784_3, _784_4, _784_5)
+            end,
+            Icon = "lucide:heart",
+            Title = "Enjoy!",
+            Variant = "Primary",
+        },
+    },
+})
+_5:CreateWindow({
+    HidePanelBackground = false,
+    NewElements = true,
+    KeySystem = {
+        Note = "KeyCode click on button to copy the link !",
+        Key = {
+            [1] = "bp3803cKdUxf1LRJM6j2GC9iLpOX4iP",
+            [2] = "TESTERROLE67",
+        },
+        URL = "https://link-target.net/1413782/3XlR32PRB3Xk",
+        Thumbnail = {
+            Image = "rbxassetid://88536674439005",
+        },
+        SaveKey = true,
+    },
+    Author = "Auto Tech",
+    User = {
+        Enabled = true,
+        Callback = function(_789, _789_2, _789_3)
+            _5:Notify({
+                Duration = 2,
+                Title = "ITS ME OMG!",
+                Content = "Bro its just your goffy ahh",
+            })
+        end,
+        Anonymous = false,
+    },
+    Folder = "DoviHub",
+    Theme = "BloodShadow",
+    Title = "Dovi's Hub v1.2",
+    SideBarWidth = 200,
+    HideSearchBar = false,
+    Background = "rbxassetid://118938778997085",
+    Icon = "rbxassetid://88536674439005",
+    Size = UDim2.fromOffset(650, 550),
+})
+local _ = fenv.Window
+local _ = Color3.fromHex
+error("line 1: attempt to index nil with 'Tag'")
